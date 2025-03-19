@@ -4,8 +4,8 @@
 @theme {
   --font-sans: "Inter", "sans-serif";
   --color-gray: #666666;
-  --color-bg: #e5eaf0;
   --color-purple-strong: #7259ff;
+  --color-purple-light: #e5eaf0;
 }
 
 @layer components {
@@ -22,7 +22,7 @@
   }
 
   .markdown ul {
-    @apply mt-0;
+    @apply mt-0 marker:text-gray;
   }
 
   .markdown li {
