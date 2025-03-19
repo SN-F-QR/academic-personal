@@ -4,7 +4,7 @@ import Academic from "./Academic";
 function App() {
   return (
     <BrowserRouter>
-      <div className="">
+      <div className="relative h-full w-full bg-purple-light">
         <Routes>
           <Route path="/" element={<Academic />} />
         </Routes>
