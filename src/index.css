@@ -1,2 +1,35 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", "sans-serif";
+  --color-gray: #666666;
+  --color-bg: #e5eaf0;
+  --color-purple-strong: #7259ff;
+}
+
+@layer components {
+  .markdown {
+    @apply prose text-gray;
+  }
+
+  .markdown p {
+    @apply text-base font-medium has-[+ul]:mb-0;
+  }
+
+  .markdown h2 {
+    @apply my-2 text-2xl font-bold text-black dark:text-white;
+  }
+
+  .markdown ul {
+    @apply mt-0;
+  }
+
+  .markdown li {
+    @apply text-base font-medium;
+  }
+
+  .markdown a {
+    @apply text-purple-strong;
+  }
+}
