@@ -15,8 +15,8 @@ export type PubCardProps = {
 
 const PubCard: React.FC<PubCardProps> = (props) => {
   return (
-    <div className="flex h-52 min-w-full space-x-4 rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 px-4 py-2">
-      <div className="ml-2 basis-1/3">
+    <div className="flex h-52 min-w-full space-x-4 rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 px-6 py-2">
+      <div className="basis-1/3">
         <Gallery images={props.imagePaths} />
       </div>
       <div className="flex h-full w-full basis-2/3 flex-col py-4 text-sm">
@@ -33,6 +33,14 @@ const PubCard: React.FC<PubCardProps> = (props) => {
         <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
           <IconButton icon={DocumentIcon} name="PDF" url="" />
           <IconButton icon={LinkIcon} name="URL" url="" />
+          <span className="w-full grow"></span>
+          {props.techIcon && (
+            <img
+              src={`https://skillicons.dev/icons?i=${props.techIcon}&theme=dark`}
+              className="m-0 h-7"
+              alt="Tech Icon"
+            />
+          )}
         </div>
       </div>
     </div>
@@ -55,5 +63,5 @@ export const testProps: PubCardProps = {
   ],
   link: "Test Link",
   pdfPath: "Test PDF Path",
-  techIcon: "Test Tech Icon",
+  techIcon: "unity",
 };

@@ -1,5 +1,4 @@
 import AcademicContent from "../content/academic.mdx";
-import PubCard, { PubCardProps } from "../components/PubCard";
 
 const Academic = () => {
   return (
