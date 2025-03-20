@@ -1,5 +1,6 @@
 import PubCard, { testProps } from "../components/PubCard";
 import InfoCard, { testInfo } from "../components/InfoCard";
+import CardList from "../components/CardList";
 
 ## Academic
 
@@ -15,7 +16,10 @@ My research interests focus on eXtended Reality (XR), User Interface (UI), and H
 
 ## Publications
 
-<PubCard {...testProps} />
+<CardList>
+  <PubCard {...testProps} />
+  <PubCard {...testProps} />
+</CardList>
 
 ## Research Projects
 
