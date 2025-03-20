@@ -20,7 +20,7 @@ const PubCard: React.FC<PubCardProps> = (props) => {
         <Gallery images={props.imagePaths} />
       </div>
       <div className="flex h-full w-full basis-2/3 flex-col py-4 text-sm">
-        <div className="line-clamp-2 basis-1/3 font-sans font-semibold text-gray">
+        <div className="line-clamp-2 basis-1/3 font-sans font-semibold text-gray-700">
           {props.title}
         </div>
         <div className="flex basis-1/5 place-items-center justify-between italic">
@@ -31,7 +31,7 @@ const PubCard: React.FC<PubCardProps> = (props) => {
           {props.description}
         </div>
         <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
-          <IconButton icon={DocumentIcon} name="PDF" url="" />
+          <IconButton icon={DocumentIcon} name="PDF" url={props.link} />
           <IconButton icon={LinkIcon} name="URL" url="" />
           <span className="w-full grow"></span>
           {props.techIcon && (
@@ -61,7 +61,7 @@ export const testProps: PubCardProps = {
     "/src/assets/test2.png",
     "/src/assets/test.jpg",
   ],
-  link: "Test Link",
+  link: "https://google.com",
   pdfPath: "Test PDF Path",
   techIcon: "unity",
 };
