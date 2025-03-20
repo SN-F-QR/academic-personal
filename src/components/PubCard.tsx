@@ -10,7 +10,7 @@ export type PubCardProps = {
   imagePaths: string[];
   link: string;
   pdfPath: string;
-  techIcon: string;
+  techIcon?: string;
 };
 
 const PubCard: React.FC<PubCardProps> = (props) => {

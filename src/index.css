@@ -15,15 +15,15 @@
   }
 
   .markdown p {
-    @apply text-base font-medium has-[+ul]:mb-0;
+    @apply my-4 text-base font-medium has-[+ul]:mb-0;
   }
 
   .markdown h2 {
-    @apply my-2 text-2xl font-bold text-black dark:text-white;
+    @apply mt-4 mb-2 text-2xl font-bold text-black dark:text-white;
   }
 
   .markdown ul {
-    @apply mt-0 marker:text-gray;
+    @apply my-0 marker:text-gray;
   }
 
   .markdown li {
@@ -32,5 +32,9 @@
 
   .markdown a {
     @apply text-purple-strong no-underline;
+  }
+
+  .animated {
+    @apply transition-all duration-300 ease-in-out;
   }
 }
