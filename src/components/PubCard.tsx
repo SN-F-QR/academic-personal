@@ -1,4 +1,6 @@
 import Gallery from "./Gallery";
+import IconButton from "./IconButton";
+import { DocumentIcon, LinkIcon } from "@heroicons/react/24/outline";
 
 export type PubCardProps = {
   title: string;
@@ -13,13 +15,45 @@ export type PubCardProps = {
 
 const PubCard: React.FC<PubCardProps> = (props) => {
   return (
-    <div className="flex h-52 min-w-full rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 px-4 py-2">
+    <div className="flex h-52 min-w-full space-x-4 rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 px-4 py-2">
       <div className="ml-2 basis-1/3">
         <Gallery images={props.imagePaths} />
       </div>
-      <div className="h-full"></div>
+      <div className="flex h-full w-full basis-2/3 flex-col py-4 text-sm">
+        <div className="line-clamp-2 basis-1/3 font-sans font-semibold text-gray">
+          {props.title}
+        </div>
+        <div className="flex basis-1/5 place-items-center justify-between italic">
+          <div className="line-clamp-1">{props.author}</div>
+          <div className="shrink-0">{props.conference}</div>
+        </div>
+        <div className="line-clamp-3 basis-1/2 place-items-center text-justify">
+          {props.description}
+        </div>
+        <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
+          <IconButton icon={DocumentIcon} name="PDF" url="" />
+          <IconButton icon={LinkIcon} name="URL" url="" />
+        </div>
+      </div>
     </div>
   );
 };
 
 export default PubCard;
+
+export const testProps: PubCardProps = {
+  title:
+    "Effect of Presentation Methods on User Experiences and Perception in VR Shopping Recommender Systems",
+  author: "Yang Zhan, Tatsuo Nakajima",
+  conference: "SIGIR-AP 24",
+  description:
+    "Why people enjoy shopping for virtual goods? We explored how functionality and social experiences come together to shape the novel VR shopping experience.",
+  imagePaths: [
+    "/src/assets/test3.jpg",
+    "/src/assets/test2.png",
+    "/src/assets/test.jpg",
+  ],
+  link: "Test Link",
+  pdfPath: "Test PDF Path",
+  techIcon: "Test Tech Icon",
+};
