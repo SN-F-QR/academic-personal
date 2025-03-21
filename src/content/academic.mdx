@@ -1,6 +1,7 @@
-import PubCard, { testProps } from "../components/PubCard";
+import PubCard, { SinglePubCard } from "../components/PubCard";
 import InfoCard, { testInfo, ProjectCard } from "../components/InfoCard";
 import CardList from "../components/CardList";
+import { imagePaths } from "../utils/imageManager";
 
 ## Academic
 
@@ -17,8 +18,26 @@ My research interests focus on eXtended Reality (XR), User Interface (UI), and H
 ## Publications
 
 <CardList>
-  <PubCard {...testProps} />
-  <PubCard {...testProps} />
+  <SinglePubCard
+    title="Effect of Presentation Methods on User Experiences and Perception in VR Shopping Recommender Systems"
+    author="Yang Zhan, Tatsuo Nakajima"
+    conference="SIGIR-AP 24"
+    description="Why people enjoy shopping for virtual goods? We explored how functionality and social experiences come together to shape the novel VR shopping experience."
+    imagePaths={imagePaths.get("shop-rs")}
+    link="https://google.com"
+    pdfPath=""
+    techIcon="unity"
+  />
+  <SinglePubCard
+    title="Effect of Presentation Methods on User Experiences and Perception in VR Shopping Recommender Systems"
+    author="Yang Zhan, Tatsuo Nakajima"
+    conference="SIGIR-AP 24"
+    description="Why people enjoy shopping for virtual goods? We explored how functionality and social experiences come together to shape the novel VR shopping experience."
+    imagePaths={imagePaths.get("shop-avi")}
+    link="https://google.com"
+    pdfPath=""
+    techIcon="unity"
+  />
 </CardList>
 
 ## Research Projects
