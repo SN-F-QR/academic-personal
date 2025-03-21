@@ -20,29 +20,8 @@ const PubCard: React.FC<PubCardProps> = (props) => {
       <div className="basis-1/3">
         <Gallery images={props.imagePaths} />
       </div>
-      <div className="flex h-full w-full basis-2/3 flex-col py-4 text-sm">
-        <div className="line-clamp-2 basis-1/3 font-sans font-semibold text-gray-700">
-          {props.title}
-        </div>
-        <div className="flex basis-1/5 place-items-center justify-between italic">
-          <div className="line-clamp-1">{props.author}</div>
-          <div className="shrink-0">{props.conference}</div>
-        </div>
-        <div className="line-clamp-3 basis-1/2 place-items-center text-justify">
-          {props.description}
-        </div>
-        <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
-          <IconButton icon={DocumentIcon} name="PDF" url={props.link} />
-          <IconButton icon={LinkIcon} name="URL" url="" />
-          <span className="w-full grow"></span>
-          {props.techIcon && (
-            <img
-              src={`https://skillicons.dev/icons?i=${props.techIcon}&theme=dark`}
-              className="m-0 h-7"
-              alt="Tech Icon"
-            />
-          )}
-        </div>
+      <div className="basis-2/3 py-4 text-sm">
+        <CardInfo {...props} />
       </div>
     </div>
   );
@@ -54,29 +33,37 @@ export const SinglePubCard: React.FC<PubCardProps> = (props) => {
       <div className="basis-1/3">
         <SingleImage image={props.imagePaths[0]} />
       </div>
-      <div className="flex h-full w-full basis-2/3 flex-col py-4 pr-6 pl-2 text-sm">
-        <div className="line-clamp-2 basis-1/3 place-content-center font-sans font-semibold text-gray-700">
-          {props.title}
-        </div>
-        <div className="flex place-items-center justify-between italic">
-          <div className="line-clamp-1">{props.author}</div>
-          <div className="shrink-0">{props.conference}</div>
-        </div>
-        <div className="line-clamp-3 basis-1/2 place-content-center place-items-center text-justify">
-          {props.description}
-        </div>
-        <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
-          <IconButton icon={DocumentIcon} name="PDF" url={props.link} />
-          <IconButton icon={LinkIcon} name="URL" url="" />
-          <span className="w-full grow"></span>
-          {props.techIcon && (
-            <img
-              src={`https://skillicons.dev/icons?i=${props.techIcon}&theme=dark`}
-              className="m-0 h-7"
-              alt="Tech Icon"
-            />
-          )}
-        </div>
+      <div className="basis-2/3 py-4 pr-6 pl-2">
+        <CardInfo {...props} />
+      </div>
+    </div>
+  );
+};
+
+const CardInfo: React.FC<PubCardProps> = (props) => {
+  return (
+    <div className="flex h-full w-full flex-col text-sm">
+      <div className="line-clamp-2 basis-1/3 place-content-center font-sans font-semibold text-gray-700">
+        {props.title}
+      </div>
+      <div className="flex place-items-center justify-between italic">
+        <div className="line-clamp-1">{props.author}</div>
+        <div className="shrink-0">{props.conference}</div>
+      </div>
+      <div className="line-clamp-3 basis-1/2 place-content-center place-items-center text-justify">
+        {props.description}
+      </div>
+      <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
+        <IconButton icon={DocumentIcon} name="PDF" url={props.pdfPath} />
+        <IconButton icon={LinkIcon} name="URL" url={props.link} />
+        <span className="w-full grow"></span>
+        {props.techIcon && (
+          <img
+            src={`https://skillicons.dev/icons?i=${props.techIcon}&theme=dark`}
+            className="m-0 h-7"
+            alt="Tech Icon"
+          />
+        )}
       </div>
     </div>
   );
