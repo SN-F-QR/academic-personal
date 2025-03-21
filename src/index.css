@@ -15,7 +15,7 @@
   }
 
   .markdown p {
-    @apply my-4 text-base font-medium has-[+ul]:mb-0;
+    @apply my-4 text-base font-normal has-[+ul]:mb-0;
   }
 
   .markdown h2 {
@@ -27,11 +27,11 @@
   }
 
   .markdown li {
-    @apply text-base font-medium;
+    @apply text-base;
   }
 
   .markdown a {
-    @apply text-purple-strong no-underline;
+    @apply font-normal text-purple-strong no-underline;
   }
 
   .animated {

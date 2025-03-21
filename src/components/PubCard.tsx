@@ -50,7 +50,7 @@ const CardInfo: React.FC<PubCardProps> = (props) => {
         <div className="line-clamp-1">{props.author}</div>
         <div className="shrink-0">{props.conference}</div>
       </div>
-      <div className="line-clamp-3 basis-1/2 place-content-center place-items-center text-justify">
+      <div className="line-clamp-3 basis-1/2 place-content-center place-items-center">
         {props.description}
       </div>
       <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
