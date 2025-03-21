@@ -7,9 +7,9 @@ import { imagePaths } from "../utils/imageManager";
 
 Hi! I am a master's student (M2) in Computer Science at Waseda University, advised by [Prof. Tatsuo Nakajima](https://scholar.google.co.jp/citations?user=hVxdgeYAAAAJ&hl=ja).
 
-Previously, I received my bachelor's degree from the Electronic Information School at Wuhan University, China, where I was supervised by Prof. Guangyi Yang. I was a research intern at The Hong Kong University of Science and Technology, under the guidance of Assistant Prof. Lik-Hang Lee and Prof. Pan Hui.
+Previously, I received my bachelor's degree from the Electronic Information School at Wuhan University, China, where I was supervised by [Prof. Guangyi Yang](https://scholar.google.com/citations?hl=zh-CN&user=DiqJdPEAAAAJ&view_op=list_works&sortby=pubdate). I was a research intern at Hong Kong University of Science and Technology, under the guidance of [Prof. Lik-Hang Lee](https://www.lhlee.com/) and [Prof. Pan Hui](https://panhui.people.ust.hk/index.html).
 
-My research interests focus on eXtended Reality (XR), User Interface (UI), and Human-Centered Design.
+My current research interests focus on eXtended Reality (XR), User Interface (UI), and Human-Centered Design.
 
 - I am interested in HCI / VR / AI / LLM.
 - I am introducing LLM to XR spaces, improving the interaction efficiency!
@@ -18,23 +18,24 @@ My research interests focus on eXtended Reality (XR), User Interface (UI), and H
 ## Publications
 
 <CardList>
+  <span />
   <SinglePubCard
     title="Effect of Presentation Methods on User Experiences and Perception in VR Shopping Recommender Systems"
     author="Yang Zhan, Tatsuo Nakajima"
     conference="SIGIR-AP 24"
-    description="Why people enjoy shopping for virtual goods? We explored how functionality and social experiences come together to shape the novel VR shopping experience."
+    description="We investigated how presentations of recommended products affect shopping, revealing users' expectation for attention cues in VR recommender system."
     imagePaths={imagePaths.get("shop-rs")}
-    link="https://google.com"
+    link="https://dl.acm.org/doi/10.1145/3673791.3698430"
     pdfPath=""
-    techIcon="unity"
+    techIcon="unity,python"
   />
   <SinglePubCard
-    title="Effect of Presentation Methods on User Experiences and Perception in VR Shopping Recommender Systems"
-    author="Yang Zhan, Tatsuo Nakajima"
-    conference="SIGIR-AP 24"
+    title="Investigating User Experience in Virtual Goods Shopping through a VR Diegetic In-Game Store 🏆"
+    author="Yang Zhan*, Yiming Sun*, Tatsuo Nakajima"
+    conference="AVI 24"
     description="Why people enjoy shopping for virtual goods? We explored how functionality and social experiences come together to shape the novel VR shopping experience."
     imagePaths={imagePaths.get("shop-avi")}
-    link="https://google.com"
+    link="https://dl.acm.org/doi/10.1145/3656650.3656670"
     pdfPath=""
     techIcon="unity"
   />
@@ -42,8 +43,39 @@ My research interests focus on eXtended Reality (XR), User Interface (UI), and H
 
 ## Research Projects
 
-<ProjectCard {...testInfo} />
+<CardList>
+  <ProjectCard {...testInfo} />
+  <ProjectCard
+    title="Superpixel based no-reference Image Quality Transformer (SPIQ)"
+    author="Yang Zhan, supervised by Prof. Guangyi Yang"
+    place="EE@WHU, 2022"
+    tags={["Superpixel", "Image Quality Assessment", "Transformer"]}
+    abstract={`Image Quality Assessment (IQA) evaluates the visual quality of digital images and is widely used in Computer Vision (CV). Recent high-performance IQA algorithms are mainly based on Convolutional Neural Networks (CNNs), but their fixed input size constraints prevent direct processing of images with varying dimensions. To address this, Transformers, which handle arbitrary-length sequences, have been introduced in IQA.
+
+    This paper proposes SPIQ, a novel no-reference IQA algorithm combining Transformers and superpixel-based spatial embeddings. The method employs a Residual Network (ResNet) for patch encoding, integrates superpixel spatial position embeddings, and utilizes a lightweight Transformer encoder for quality prediction. SPIQ directly evaluates images of any size, avoiding preprocessing-induced accuracy loss. Compared to conventional embeddings, superpixel-based spatial embeddings use fewer parameters while better capturing patch relationships.
+
+    Experiments on Koniq-10k, LIVE Challenge, and PaQ-2-PiQ datasets validate SPIQ’s accuracy. The study examines the patch embedding network’s sensitivity to input size and the effect of superpixel granularity. Results show that SPIQ outperforms mainstream IQA algorithms in prediction accuracy, demonstrating its effectiveness in real-world image quality assessment.`}
+    link=""
+
+/>
+
+  <ProjectCard
+    title="Deep Superpixel-based Network for Blind Image Quality Assessment"
+    author="Yang Zhan, Yuxuan Wang, supervised by Prof. Guangyi Yang"
+    place="EE@WHU, 2021"
+    tags={["Superpixel", "IQA", "CNN"]}
+    abstract={`The goal of a blind image quality assessment (BIQA) model is to simulate the process of evaluating images by human eyes and accurately assess the quality of the image. Although many approaches effectively identify degradation, they do not fully consider the semantic content in images resulting in distortion. In order to fill this gap, we propose a deep adaptive superpixel-based network, namely DSN-IQA, to assess the quality of images based on multi-scale and superpixel segmentation. The DSN-IQA can adaptively accept arbitrary scale images as input images, making the assessment process similar to human perception. The network uses two models to extract multi-scale semantic features and generate a superpixel adjacency map. These two elements are united together via feature fusion to accurately predict image quality. Experimental results on different benchmark databases demonstrate that our algorithm is highly competitive with other approaches when assessing challenging authentic image databases. Also, due to an adaptive deep superpixel-based network, our model accurately assesses images with complicated distortion, much like the human eye.`}
+    link="https://arxiv.org/abs/2110.06564"
+
+/>
+
+</CardList>
 
 ## Internships
 
-<InfoCard {...testInfo} />
+<CardList>
+  <InfoCard
+    title="Research intern at Hong Kong University of Science and Technology"
+    author="Supervised by Prof. Pan Hui and Prof. Lik-hang Lee, 2021"
+  />
+</CardList>

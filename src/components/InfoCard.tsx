@@ -29,7 +29,7 @@ const InfoCard: React.FC<InfoCardProps> = (props) => {
 };
 
 export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="flex w-full flex-col space-y-1 text-sm">
