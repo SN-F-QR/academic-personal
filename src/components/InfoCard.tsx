@@ -52,8 +52,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
             <TagText text={tag} key={tag} />
           ))}
         </div>
-        <h4 className="my-1 font-semibold text-gray-800">Abstract</h4>
+        <h4 className="my-1 font-semibold text-wrap text-gray-800">Abstract</h4>
         <p className="m-0 text-justify text-sm font-normal">{props.abstract}</p>
+        <div className="my-1">
+          <a
+            href={props.link}
+            className="text-sm font-semibold text-purple-strong"
+          >
+            [Link]
+          </a>
+        </div>
       </div>
     </div>
   );
