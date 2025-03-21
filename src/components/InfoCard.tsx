@@ -45,7 +45,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         />
       </div>
       <div
-        className={`${isExpanded ? "max-h-96 opacity-100" : "invisible max-h-0 opacity-0"} animated`}
+        className={`${isExpanded ? "max-h-dvh opacity-100" : "invisible max-h-0 opacity-0"} animated`}
       >
         <div className="flex flex-wrap space-x-2 py-1">
           {props.tags.map((tag) => (
@@ -53,7 +53,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           ))}
         </div>
         <h4 className="my-1 font-semibold text-wrap text-gray-800">Abstract</h4>
-        <p className="m-0 text-justify text-sm font-normal">{props.abstract}</p>
+        <p className="m-0 text-justify text-sm font-normal whitespace-pre-line">
+          {props.abstract}
+        </p>
         <div className="my-1">
           <a
             href={props.link}
