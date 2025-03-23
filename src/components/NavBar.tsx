@@ -1,23 +1,16 @@
-import { useState } from "react";
+import { NavLink } from "react-router";
 
 const NavBar = () => {
-  const [activePage, setActivePage] = useState("Academic");
-
-  const buttonOnClick = (value: string) => {
-    setActivePage(value);
-  };
-
-  const navButtons = ["Academic", "About", "Links"].map((name) => (
-    <NavButton
-      key={`nav-button-${name}`}
-      name={name}
-      activeName={activePage}
-      setActiveName={buttonOnClick}
-    />
-  ));
+  const navButtons = ["Academic", "About", "Links"].map((name, index) => {
+    let path = name.toLowerCase();
+    if (index === 0) {
+      path = "";
+    }
+    return <NavButton key={`nav-button-${name}`} name={name} path={path} />;
+  });
 
   return (
-    <div className="fixed top-8 left-1/12 flex h-full flex-col justify-items-center space-y-4 font-sans">
+    <div className="fixed top-8 left-32 flex h-full flex-col justify-items-center space-y-4 font-sans">
       <img
         src="./public/avatar.png"
         alt="avatar of Yang Zhan"
@@ -26,25 +19,28 @@ const NavBar = () => {
       <h1 className="place-self-start font-sans text-3xl font-bold">
         Yang Zhan
       </h1>
-      <div className="flex flex-col space-y-2">{navButtons}</div>
+      <nav className="flex flex-col space-y-2 text-xl font-light text-gray">
+        {navButtons}
+      </nav>
     </div>
   );
 };
 
 const NavButton: React.FC<{
   name: string;
-  activeName: string;
-  setActiveName: (value: string) => void;
-}> = ({ name, activeName, setActiveName }) => {
+  path: string;
+}> = ({ name, path }) => {
   return (
-    <button
-      className={`h-10 w-54 rounded-xl ${name === activeName ? "bg-purple-mid" : "bg-[#f5f4ff]"} cursor-pointer text-xl font-normal text-gray`}
-      onClick={() => setActiveName(name)}
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        `h-10 w-54 cursor-pointer rounded-xl ${isActive ? "bg-purple-mid shadow-md" : "bg-[#f5f4ff]"}`
+      }
     >
-      <div className="flex">
-        <span className="place-self-start px-4">{name}</span>
+      <div className="flex h-full">
+        <span className="place-self-center px-4">{name}</span>
       </div>
-    </button>
+    </NavLink>
   );
 };
 

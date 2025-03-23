@@ -1,8 +1,8 @@
 import AcademicContent from "../content/academic.mdx";
 
-const Academic = () => {
+const Academic: React.FC<{ pageStyle: string }> = ({ pageStyle }) => {
   return (
-    <div className="markdown flex min-h-dvh flex-col place-self-center overflow-hidden pt-8 pb-20 md:ml-16">
+    <div className={pageStyle}>
       <AcademicContent />
     </div>
   );
