@@ -11,7 +11,7 @@ export type ProjectCardProps = InfoCardProps & {
   place: string;
   tags: string[];
   abstract: string;
-  link: string;
+  link?: string;
 };
 
 const InfoCard: React.FC<InfoCardProps> = (props) => {
@@ -56,14 +56,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         <p className="m-0 text-justify text-sm font-normal whitespace-pre-line">
           {props.abstract}
         </p>
-        <div className="my-1">
-          <a
-            href={props.link}
-            className="text-sm font-semibold text-purple-strong"
-          >
-            [Link]
-          </a>
-        </div>
+        {props.link && (
+          <div className="my-1">
+            <a
+              href={props.link}
+              className="text-sm font-semibold text-purple-strong"
+            >
+              [Link]
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
