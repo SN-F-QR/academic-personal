@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import LocationWidget from "./LocationWidget";
 
 const NavBar = () => {
   const navButtons = ["Academic", "About", "Links"].map((name, index) => {
@@ -12,7 +13,7 @@ const NavBar = () => {
   return (
     <div className="fixed top-8 left-32 flex h-full flex-col justify-items-center space-y-4 font-sans">
       <img
-        src="./public/avatar.png"
+        src="./avatar.png"
         alt="avatar of Yang Zhan"
         className="mt-4 h-32 w-32 rounded-full border border-black"
       />
@@ -22,6 +23,7 @@ const NavBar = () => {
       <nav className="flex flex-col space-y-2 text-xl font-light text-gray">
         {navButtons}
       </nav>
+      <LocationWidget />
     </div>
   );
 };
@@ -34,7 +36,7 @@ const NavButton: React.FC<{
     <NavLink
       to={path}
       className={({ isActive }) =>
-        `h-10 w-54 cursor-pointer rounded-xl ${isActive ? "bg-purple-mid shadow-md" : "bg-[#f5f4ff]"}`
+        `h-10 w-54 cursor-pointer rounded-xl ${isActive ? "bg-purple-mid text-purple-strong shadow-md" : "bg-[#f5f4ff]"}`
       }
     >
       <div className="flex h-full">
