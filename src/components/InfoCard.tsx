@@ -20,7 +20,7 @@ const InfoCard: React.FC<InfoCardProps> = (props) => {
       <h3 className="m-0 line-clamp-2 font-sans text-base font-medium text-gray-700">
         {props.title}
       </h3>
-      <div className="flex place-items-center justify-between italic">
+      <div className="flex place-items-center justify-between space-x-3 italic">
         <div className="line-clamp-1">{props.author}</div>
         <div className="shrink-0">{props.place}</div>
       </div>
