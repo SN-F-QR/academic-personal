@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
   // });
 
   return (
-    <div className="sticky top-8 mx-8 hidden h-full max-w-54 flex-col justify-items-center space-y-4 font-sans lg:flex">
+    <div className="sticky top-8 mx-8 hidden h-full max-w-54 shrink-0 flex-col justify-items-center space-y-4 font-sans lg:flex">
       <img
         src="./avatar.png"
         alt="avatar of Yang Zhan"
@@ -69,7 +69,7 @@ const NavButton: React.FC<{
     <NavLink
       to={path}
       className={({ isActive }) =>
-        `h-10 max-w-54 flex-1 grow cursor-pointer rounded-xl ${isActive ? "bg-purple-mid text-purple-strong shadow-md" : "bg-[#f5f4ff]"}`
+        `h-10 max-w-54 flex-1 cursor-pointer rounded-xl lg:flex-auto ${isActive ? "bg-purple-mid text-purple-strong shadow-md" : "bg-[#f5f4ff]"}`
       }
     >
       <div className="flex h-full">
