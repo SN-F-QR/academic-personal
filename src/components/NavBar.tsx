@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import LocationWidget from "./LocationWidget";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   const navButtons = ["Academic", "About", "Links"].map((name, index) => {
     let path = name.toLowerCase();
     if (index === 0) {
@@ -11,7 +11,7 @@ const NavBar = () => {
   });
 
   return (
-    <div className="fixed top-8 left-32 flex h-full flex-col justify-items-center space-y-4 font-sans">
+    <div className="sticky top-8 mx-8 flex h-full max-w-54 flex-col justify-items-center space-y-4 font-sans">
       <img
         src="./avatar.png"
         alt="avatar of Yang Zhan"
