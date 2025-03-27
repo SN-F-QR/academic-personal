@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
   // });
 
   return (
-    <div className="sticky top-8 mx-8 hidden h-full max-w-54 shrink-0 flex-col justify-items-center space-y-4 font-sans lg:flex">
+    <div className="sticky top-12 hidden h-full max-w-54 shrink-0 flex-col justify-items-center space-y-4 font-sans lg:flex">
       <img
         src="./avatar.png"
         alt="avatar of Yang Zhan"

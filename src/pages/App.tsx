@@ -6,12 +6,12 @@ import About from "./About";
 
 function App() {
   const pageStyle =
-    "markdown flex min-h-dvh w-full flex-col place-self-center overflow-hidden lg:mr-8 lg:ml-16 md:max-w-2xl md:min-w-2xl";
+    "markdown flex min-h-dvh w-full flex-col place-self-center overflow-hidden lg:ml-16 md:max-w-2xl md:min-w-2xl";
 
   return (
     <BrowserRouter>
       <div className="h-full w-full bg-purple-light p-4">
-        <div className="h-full place-self-center pt-8 pb-20 lg:flex xl:mr-40">
+        <div className="h-full space-x-8 place-self-center pt-8 pb-20 transition-all lg:flex xl:mr-40">
           <NavBar />
           <InlineNavBar />
           <div>
