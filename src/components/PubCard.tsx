@@ -34,7 +34,7 @@ export const SinglePubCard: React.FC<PubCardProps> = (props) => {
         <div className="basis-1/3 sm:shrink-0">
           <SingleImage image={props.imagePaths[0]} />
         </div>
-        <div className="basis-2/3 px-6 py-4">
+        <div className="basis-2/3 px-4 py-4 sm:px-6">
           <CardInfo {...props} />
         </div>
       </div>
