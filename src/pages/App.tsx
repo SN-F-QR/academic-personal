@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="h-full w-full bg-purple-light p-4">
-        <div className="h-full space-x-8 place-self-center pt-8 pb-20 transition-all lg:flex xl:mr-40">
+        <div className="h-full space-x-8 place-self-center pt-8 pb-20 transition-all lg:flex xl:mr-32">
           <NavBar />
           <InlineNavBar />
           <div>

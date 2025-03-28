@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export type GalleryProps = {
   images: string[];
 };
@@ -29,12 +31,17 @@ const Gallery: React.FC<GalleryProps> = (props) => {
 };
 
 export const SingleImage: React.FC<{ image: string }> = ({ image }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const handleClick = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <div className="h-full">
       <img
         src={image}
-        className="m-0 h-full object-cover"
+        className={`m-0 w-full cursor-pointer object-cover ${isExpanded ? "h-96" : "h-48"} animated sm:h-full sm:cursor-default`}
         alt="a figure in this paper"
+        onClick={handleClick}
       />
     </div>
   );

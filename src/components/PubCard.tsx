@@ -29,12 +29,14 @@ const PubCard: React.FC<PubCardProps> = (props) => {
 
 export const SinglePubCard: React.FC<PubCardProps> = (props) => {
   return (
-    <div className="flex h-52 min-w-full overflow-hidden rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 shadow-md">
-      <div className="basis-1/3">
-        <SingleImage image={props.imagePaths[0]} />
-      </div>
-      <div className="basis-2/3 py-4 pr-6 pl-2">
-        <CardInfo {...props} />
+    <div className="min-w-full overflow-hidden rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 shadow-md sm:min-h-52">
+      <div className="h-full sm:flex">
+        <div className="basis-1/3 sm:shrink-0">
+          <SingleImage image={props.imagePaths[0]} />
+        </div>
+        <div className="basis-2/3 px-6 py-4">
+          <CardInfo {...props} />
+        </div>
       </div>
     </div>
   );
@@ -42,18 +44,18 @@ export const SinglePubCard: React.FC<PubCardProps> = (props) => {
 
 const CardInfo: React.FC<PubCardProps> = (props) => {
   return (
-    <div className="flex h-full w-full flex-col text-sm">
-      <div className="line-clamp-2 basis-1/3 place-content-center font-sans font-semibold text-gray-700">
+    <div className="flex h-full w-full flex-col justify-evenly space-y-1 text-sm">
+      <div className="shrink place-content-center font-sans font-semibold text-gray-700 sm:line-clamp-3">
         {props.title}
       </div>
-      <div className="flex place-items-center justify-between italic">
+      <div className="flex shrink place-items-center justify-between italic">
         <div className="line-clamp-1">{props.author}</div>
         <div className="shrink-0">{props.conference}</div>
       </div>
-      <div className="line-clamp-3 basis-1/2 place-content-center place-items-center">
+      <div className="place-content-center pb-1 sm:line-clamp-4">
         {props.description}
       </div>
-      <div className="flex shrink basis-1/4 place-items-end space-x-2 pt-1">
+      <div className="flex place-items-center space-x-2">
         <IconButton icon={DocumentIcon} name="PDF" url={props.pdfPath} />
         <IconButton icon={LinkIcon} name="URL" url={props.link} />
         <span className="w-full grow"></span>
