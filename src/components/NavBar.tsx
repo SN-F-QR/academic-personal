@@ -21,7 +21,7 @@ const NavBar: React.FC = () => {
       <h1 className="place-self-start font-sans text-3xl font-bold">
         Yang Zhan
       </h1>
-      <nav className="flex flex-col space-y-2 text-xl font-light text-gray">
+      <nav className="flex flex-col space-y-1 text-xl font-light text-gray">
         <NavButtonList names={["Academic", "About", "Links"]} />
       </nav>
       <LocationWidget />
@@ -31,16 +31,16 @@ const NavBar: React.FC = () => {
 
 export const InlineNavBar: React.FC = () => {
   return (
-    <div className="flex w-full flex-1 flex-col space-y-4 pb-4 lg:hidden">
+    <div className="flex w-full flex-col space-y-4 pb-4 lg:hidden">
       <div className="flex items-center space-x-4">
         <img
           src="./avatar.png"
           alt="avatar of Yang Zhan"
-          className="mt-4 h-32 w-32 rounded-full border border-black"
+          className="mt-4 h-24 w-24 rounded-full border border-black"
         />
         <h1 className="font-sans text-3xl font-bold">Yang Zhan</h1>
       </div>
-      <nav className="flex space-x-2 text-xl font-light text-gray">
+      <nav className="flex flex-wrap space-x-2 text-xl font-light text-gray">
         <NavButtonList names={["Academic", "About", "Links"]} />
       </nav>
     </div>
@@ -69,10 +69,10 @@ const NavButton: React.FC<{
     <NavLink
       to={path}
       className={({ isActive }) =>
-        `h-10 max-w-54 flex-1 cursor-pointer rounded-xl lg:flex-auto ${isActive ? "bg-purple-mid text-purple-strong shadow-md" : "bg-[#f5f4ff]"}`
+        `mt-1 h-10 flex-1 cursor-pointer rounded-xl lg:max-w-54 lg:flex-auto ${isActive ? "bg-purple-mid text-purple-strong shadow-sm" : "bg-[#f5f4ff]/75"} animated`
       }
     >
-      <div className="flex h-full">
+      <div className="flex h-full justify-center lg:justify-start">
         <span className="min-w-4 place-self-center px-4">{name}</span>
       </div>
     </NavLink>
