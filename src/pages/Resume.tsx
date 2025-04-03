@@ -16,11 +16,17 @@ const Resume: React.FC = () => {
 export const RHeader: React.FC<{
   name: string;
   description: string;
+  homepage?: string;
   cvUrl?: string;
-}> = ({ name, description, cvUrl }) => {
+}> = ({ name, description, homepage, cvUrl }) => {
   return (
     <header>
-      <h2>{name}</h2>
+      <a className="" href={homepage}>
+        <h2>
+          {name}
+          <ArrowUpRightIcon className="ml-1 inline size-4 align-text-top" />
+        </h2>
+      </a>
       <p className="m-0 text-sm">{description}</p>
       {cvUrl && (
         <a className="text-sm" href={cvUrl} download>
