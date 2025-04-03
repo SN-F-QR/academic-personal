@@ -1,7 +1,6 @@
 import Gallery, { SingleImage } from "./Gallery";
 import IconButton from "./IconButton";
 import { DocumentIcon, LinkIcon } from "@heroicons/react/24/outline";
-import { imagePaths } from "../utils/imageManager";
 
 export type PubCardProps = {
   title: string;
@@ -45,16 +44,19 @@ export const SinglePubCard: React.FC<PubCardProps> = (props) => {
 const CardInfo: React.FC<PubCardProps> = (props) => {
   return (
     <div className="flex h-full w-full flex-col justify-evenly space-y-1 text-sm">
-      <div className="shrink place-content-center font-sans font-semibold text-gray-700 sm:line-clamp-3">
-        {props.title}
+      <div className="flex w-full flex-col space-y-1">
+        <div className="shrink place-content-center font-sans font-semibold text-gray-700 sm:line-clamp-3">
+          {props.title}
+        </div>
+        <div className="flex shrink place-items-center justify-between italic">
+          <div className="line-clamp-1">{props.author}</div>
+          <div className="shrink-0">{props.conference}</div>
+        </div>
+        <div className="place-content-center pb-1 sm:line-clamp-4">
+          {props.description}
+        </div>
       </div>
-      <div className="flex shrink place-items-center justify-between italic">
-        <div className="line-clamp-1">{props.author}</div>
-        <div className="shrink-0">{props.conference}</div>
-      </div>
-      <div className="place-content-center pb-1 sm:line-clamp-4">
-        {props.description}
-      </div>
+
       <div className="flex place-items-center space-x-2">
         <IconButton icon={DocumentIcon} name="PDF" url={props.pdfPath} />
         <IconButton icon={LinkIcon} name="URL" url={props.link} />
