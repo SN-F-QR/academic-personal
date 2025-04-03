@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Academic from "./Academic";
 import Links from "./Links";
 import NavBar, { InlineNavBar } from "../components/NavBar";
+import WithNavBarLayout from "../components/WithNavBarLayout";
 import About from "./About";
 import Resume from "./Resume";
 
@@ -12,20 +13,15 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-dvh w-full bg-purple-light p-4">
-        <div className="h-full space-x-8 place-self-center pt-8 pb-20 transition-all lg:flex xl:mr-32">
-          <NavBar />
-          <InlineNavBar />
-          <div>
-            <Routes>
-              <Route path="/" element={<Academic pageStyle={pageStyle} />} />
+        <div>
+          <Routes>
+            <Route path="/" element={<WithNavBarLayout />}>
+              <Route index element={<Academic pageStyle={pageStyle} />} />
               <Route path="/about" element={<About pageStyle={pageStyle} />} />
               <Route path="/links" element={<Links pageStyle={pageStyle} />} />
-              <Route
-                path="/resume"
-                element={<Resume pageStyle={pageStyle} />}
-              />
-            </Routes>
-          </div>
+            </Route>
+            <Route path="/resume" element={<Resume pageStyle={pageStyle} />} />
+          </Routes>
         </div>
       </div>
     </BrowserRouter>
