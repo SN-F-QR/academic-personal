@@ -1,26 +1,37 @@
-const Resume: React.FC<{ pageStyle: string }> = ({ pageStyle }) => {
+import Markdown from "react-markdown";
+import ResumeContent from "../content/resume.mdx";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+
+const Resume: React.FC = () => {
   return (
-    <div className={pageStyle}>
-      <RSection title="Education">
-        <RItem
-          title="University of California, Berkeley"
-          startTime="Aug 2022"
-          endTime="Present"
-          subtitle="Ph.D. in Computer Science"
-          description="Advisor: Trevor Darrell"
-        />
-      </RSection>
+    <div className="markdown flex h-full w-auto max-w-2xl flex-col place-self-center overflow-hidden">
+      <ResumeContent />
+      <footer>
+        <p className="text-xs">Last updated 2025/04/03</p>
+      </footer>
     </div>
+  );
+};
+
+export const RHeader: React.FC<{
+  name: string;
+  description: string;
+}> = ({ name, description }) => {
+  return (
+    <header>
+      <h2>{name}</h2>
+      <p className="m-0 text-sm">{description}</p>
+    </header>
   );
 };
 
 export const RSection: React.FC<{
   title: string;
-  children: React.ReactElement;
+  children: React.ReactNode;
 }> = ({ title, children }) => {
   return (
-    <section className="my-6">
-      <h3 className="my-2">{title}</h3>
+    <section className="my-4">
+      <h3 className="my-4">{title}</h3>
       <div className="flex flex-col space-y-4">{children}</div>
     </section>
   );
@@ -35,15 +46,35 @@ export const RItem: React.FC<{
   url?: string;
 }> = ({ title, startTime, endTime, subtitle, description, url }) => {
   return (
-    <div className="flex flex-col text-sm md:flex-row md:justify-between">
-      <div className="py-2 font-light text-gray">{`${startTime}${endTime ? ` - ${endTime}` : ""}`}</div>
+    <div className="flex w-full flex-col text-sm md:flex-row">
+      <div className="mr-12 mb-1 w-full max-w-28 font-light text-gray-700">{`${startTime}${endTime ? ` - ${endTime}` : ""}`}</div>
 
-      <div className="flex flex-col">
-        <div className="flex-1">{url ? <a href={url}>{title}</a> : title}</div>
-        {subtitle && <div className="flex-1 text-gray-700">{subtitle}</div>}
+      <div className="flex flex-1 flex-col space-y-1">
+        <div className="text-black">
+          {url ? (
+            <a className="cursor-pointer text-black" href={url}>
+              {title}
+              <ArrowUpRightIcon className="ml-1 inline size-3 align-text-top" />
+            </a>
+          ) : (
+            title
+          )}
+        </div>
+        {subtitle && <div className="font-light text-gray-700">{subtitle}</div>}
         {description && (
-          <div className="flex-1 text-sm font-light text-gray-700">
-            {description}
+          <div className="">
+            <Markdown
+              components={{
+                p: ({ node, ...props }) => (
+                  <p
+                    className="my-2 text-sm font-light text-gray-700 first:mt-0"
+                    {...props}
+                  />
+                ),
+              }}
+            >
+              {description}
+            </Markdown>
           </div>
         )}
       </div>

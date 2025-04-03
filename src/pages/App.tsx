@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Academic from "./Academic";
 import Links from "./Links";
-import NavBar, { InlineNavBar } from "../components/NavBar";
 import WithNavBarLayout from "../components/WithNavBarLayout";
 import About from "./About";
 import Resume from "./Resume";
@@ -13,14 +12,14 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-dvh w-full bg-purple-light p-4">
-        <div>
+        <div className="h-full place-self-center pt-8 pb-20 transition-all">
           <Routes>
             <Route path="/" element={<WithNavBarLayout />}>
               <Route index element={<Academic pageStyle={pageStyle} />} />
               <Route path="/about" element={<About pageStyle={pageStyle} />} />
               <Route path="/links" element={<Links pageStyle={pageStyle} />} />
             </Route>
-            <Route path="/resume" element={<Resume pageStyle={pageStyle} />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </div>
       </div>
