@@ -7,7 +7,7 @@ const Resume: React.FC = () => {
     <div className="markdown flex h-full w-auto max-w-2xl flex-col place-self-center overflow-hidden">
       <ResumeContent />
       <footer>
-        <p className="text-xs">Last updated 2025/04/03</p>
+        <p className="text-xs font-light">Last updated 2025/04/03</p>
       </footer>
     </div>
   );
@@ -16,11 +16,17 @@ const Resume: React.FC = () => {
 export const RHeader: React.FC<{
   name: string;
   description: string;
-}> = ({ name, description }) => {
+  cvUrl?: string;
+}> = ({ name, description, cvUrl }) => {
   return (
     <header>
       <h2>{name}</h2>
       <p className="m-0 text-sm">{description}</p>
+      {cvUrl && (
+        <a className="text-sm" href={cvUrl} download>
+          Download
+        </a>
+      )}
     </header>
   );
 };
