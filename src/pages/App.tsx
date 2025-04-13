@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-dvh w-full bg-purple-light p-4">
-        <div className="h-full place-self-center pt-8 pb-20 transition-all">
+        <div className="h-full place-self-center pt-8 pb-20">
           <Routes>
             <Route path="/" element={<WithNavBarLayout />}>
               <Route index element={<Academic pageStyle={pageStyle} />} />
