@@ -19,7 +19,7 @@
   }
 
   .markdown h2 {
-    @apply mt-4 mb-2 text-2xl font-bold text-black dark:text-white;
+    @apply mt-4 mb-2 text-2xl font-bold text-black;
   }
 
   .markdown ul {
