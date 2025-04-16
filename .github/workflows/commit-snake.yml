@@ -1,6 +1,9 @@
 name: commit-snake-generator
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # Excute weekly
     - cron: "0 3 * * 0"
