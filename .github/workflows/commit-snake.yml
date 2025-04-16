@@ -12,12 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Platane/snk/svg-only@v3
+      - name: Generate commit snake
+        uses: Platane/snk/svg-only@v3
         with:
           # github user name to read the contribution graph from (**required**)
           # using action context var `github.repository_owner` or specified user
           github_user_name: ${{ github.repository_owner }}
-      
+
           # list of files to generate.
           # one file per line. Each output can be customized with options as query string.
           #
@@ -29,3 +30,39 @@ jobs:
           #                 Exactly 5 colors are expected.
           outputs: |
             public/github-snake.svg
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload production
+        uses: action/upload-artifact@v4
+        with:
+          name: product-web
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: create_snake
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Download production
+        uses: actions/download-artifact@v4
+        with:
+          name: product-web
+          path: ./dist
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./dist --project-name=yangzhan
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
