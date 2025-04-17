@@ -7,12 +7,12 @@ import Resume from "./Resume";
 
 function App() {
   const pageStyle =
-    "markdown flex h-full w-full flex-col place-self-center overflow-hidden lg:ml-16 md:max-w-2xl md:min-w-2xl";
+    "markdown flex h-full w-full flex-col place-self-center overflow-hidden md:w-2xl lg:ml-16";
 
   return (
     <BrowserRouter>
-      <div className="min-h-dvh w-full bg-purple-light p-4">
-        <div className="h-full place-self-center pt-8 pb-20">
+      <div className="flex min-h-dvh w-full flex-col bg-purple-light p-4">
+        <div className="flex flex-grow flex-col pt-8 pb-20">
           <Routes>
             <Route path="/" element={<WithNavBarLayout />}>
               <Route index element={<Academic pageStyle={pageStyle} />} />

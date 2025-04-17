@@ -4,12 +4,12 @@ import Footer from "./Footer";
 
 const WithNavBarLayout = () => {
   return (
-    <div className="space-x-8 transition-all lg:flex xl:mr-32">
+    <div className="flex h-full flex-grow flex-col space-x-8 place-self-center transition-all lg:flex-row xl:mr-32">
       <NavBar />
       <InlineNavBar />
-      <div>
+      <div className="flex flex-grow flex-col">
         <Outlet />
-        <div className="lg:ml-16">
+        <div className="flex-grow place-content-end lg:ml-16">
           <Footer />
         </div>
       </div>
