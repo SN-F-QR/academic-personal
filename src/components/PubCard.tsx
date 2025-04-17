@@ -1,6 +1,6 @@
 import Gallery, { SingleImage } from "./Gallery";
 import IconButton from "./IconButton";
-import { DocumentIcon, LinkIcon } from "@heroicons/react/24/outline";
+import { FileText, Link } from "lucide-react";
 
 export type PubCardProps = {
   title: string;
@@ -58,8 +58,8 @@ const CardInfo: React.FC<PubCardProps> = (props) => {
       </div>
 
       <div className="flex place-items-center space-x-2">
-        <IconButton icon={DocumentIcon} name="PDF" url={props.pdfPath} />
-        <IconButton icon={LinkIcon} name="URL" url={props.link} />
+        <IconButton icon={FileText} name="PDF" url={props.pdfPath} />
+        <IconButton icon={Link} name="URL" url={props.link} />
         <span className="w-full grow"></span>
         {props.techIcon && (
           <img

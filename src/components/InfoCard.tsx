@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 export type InfoCardProps = {
@@ -40,7 +40,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         }}
       >
         <InfoCard {...props} />
-        <ChevronRightIcon
+        <ChevronRight
           className={`size-6 place-self-center ${isExpanded ? "rotate-90" : "rotate-0"} animated`}
         />
       </div>

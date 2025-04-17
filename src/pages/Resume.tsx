@@ -1,6 +1,6 @@
 import Markdown from "react-markdown";
 import ResumeContent from "../content/resume.mdx";
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { ArrowUpRight } from "lucide-react";
 
 const Resume: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ export const RHeader: React.FC<{
       <a className="" href={homepage}>
         <h2>
           {name}
-          <ArrowUpRightIcon className="ml-1 inline size-4 align-text-top" />
+          <ArrowUpRight className="ml-1 inline size-4 align-text-top" />
         </h2>
       </a>
       <p className="m-0 text-sm">{description}</p>
@@ -66,7 +66,7 @@ export const RItem: React.FC<{
           {url ? (
             <a className="cursor-pointer text-black" href={url}>
               {title}
-              <ArrowUpRightIcon className="ml-1 inline size-3 align-text-top" />
+              <ArrowUpRight className="ml-1 inline size-3 align-text-top" />
             </a>
           ) : (
             title

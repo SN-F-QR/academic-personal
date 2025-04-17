@@ -1,4 +1,4 @@
-import { FaGithub } from "react-icons/fa";
+import GithubIcon from "/github-mark.svg";
 
 const Footer = () => {
   return (
@@ -6,7 +6,7 @@ const Footer = () => {
       <p>Last updated 2025-04-16</p>
       <span className="mt-1 inline-flex">
         <p>&copy; Designed by Yang Zhan. Code soon available at</p>
-        <FaGithub className="ml-1 size-3 place-self-center text-purple-strong" />
+        <img src={GithubIcon} className="ml-1 size-3 place-self-center" />
         <p>.</p>
       </span>
     </footer>
