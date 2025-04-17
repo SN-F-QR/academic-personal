@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="flex min-h-dvh w-full flex-col bg-purple-light p-4">
-        <div className="flex flex-grow flex-col pt-8 pb-20">
+        <div className="flex w-full flex-grow flex-col pt-8 pb-20">
           <Routes>
             <Route path="/" element={<WithNavBarLayout />}>
               <Route index element={<Academic pageStyle={pageStyle} />} />
