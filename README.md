@@ -1,54 +1,67 @@
-# React + TypeScript + Vite
+# Academic Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal academic website built with React, TypeScript, and Vite, featuring Tailwind CSS for styling and MDX for content management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Academic papers and projects showcase
+- Markdown-based content management
+- Some widget-like designs (personal location, recent news)
+- Responsive resume page
+- [GitHub contribution visualization](https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid)
 
-## Expanding the ESLint configuration
+## Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Deployment
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+By default, its workflow deploys the project to Cloudflare Pages.
+
+1. Fork the project
+2. Add your `secrets` of `CLOUDFLARE_API_TOKEN ` and `CLOUDFLARE_ACCOUNT_ID` to
+   > Settings > Secrets and variables > Actions
+3. Edit the `--project-name` to your own in `./github/workflows/commit-snake.yml`
+4. Run the workflow manually OR push new commits to trigger automatically
+
+---
+
+A **simpler** way is to directly connect the project to Cloudflare Pages, explore more [here](https://developers.cloudflare.com/pages/get-started/git-integration/). Also, remember to delete the `./github/workflows/commit-snake.yml`.
+
+:warning: _this method disables the github contribution visualization_
+
+### Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Customizing Content
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Update Personal Information
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Edit the MDX files in the `src/content/` directory to update website content:
+
+- `academic.mdx` - Academic achievements, papers, and research projects
+- `about.mdx` - Personal profile and skills
+- `links.mdx` - Links and contact information
+- `resume.mdx` - CV/Resume content
+
+You may refer to the HTML-like contents in these MDX files to use some design components, including:
+
+- `SinglePubCard` to show a publication `Card` with one figure
+- `ProjectCard` to show a expandable research project `Card` with a full abstract
+- `InfoCard` to show a project or information `Card` with a title and a subtitle
+- `CardList` to arrange any `Card` components
+
+### Update Images or Files
+
+- Update new images (avatar, map for widget) or PDF files in the `public/` directory
+- Add new figures to `src/assets/` directory for `SinglePubCard`
+
+### Fonts
+
+This project uses Google Fonts, adjust `index.css` and `index.html` to customize
+
+## Acknowledgement
+
+Color palette inspiration from [LightQuantum](https://github.com/PhotonQuantum/landingpage)
