@@ -31,12 +31,12 @@ const NewsWidget = () => {
     ));
 
   return (
-    <div className="flex w-54 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif">
+    <div className="flex h-28 max-w-54 flex-1 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif md:h-auto">
       <span className="flex w-full items-center space-x-1 pt-1 pb-2 text-purple-strong">
         <Newspaper className="size-4" />
         <h3 className="font-serif text-sm font-semibold">News</h3>
       </span>
-      <div className="flex flex-col items-center justify-evenly space-y-1 pr-1">
+      <div className="flex h-16 flex-col items-center justify-evenly space-y-1 overflow-hidden pr-1 lg:h-auto">
         {newList}
       </div>
     </div>
@@ -51,7 +51,7 @@ export const NewsItem: React.FC<{
   const Icon: IconType = iconMap[type] || PartyPopper;
 
   return (
-    <div className="border-gray-light flex w-full items-center justify-between">
+    <div className="border-gray-light flex w-full flex-grow items-center justify-between">
       <div className="flex flex-col text-xs">
         <p className="my-0 line-clamp-3 text-gray">{title}</p>
         <p className="my-0 font-light text-gray">{date}</p>

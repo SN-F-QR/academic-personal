@@ -33,18 +33,24 @@ const NavBar: React.FC = () => {
 
 export const InlineNavBar: React.FC = () => {
   return (
-    <div className="flex w-full flex-col space-y-4 pb-4 lg:hidden">
-      <div className="flex items-center space-x-4">
-        <img
-          src="./avatar.png"
-          alt="avatar of Yang Zhan"
-          className="mt-4 h-24 w-24 rounded-full border border-black"
-        />
-        <h1 className="font-sans text-3xl font-bold">Yang Zhan</h1>
+    <div className="flex w-full flex-col lg:hidden">
+      <div className="flex w-full flex-col space-y-4 pb-4 lg:hidden">
+        <div className="flex items-center space-x-4">
+          <img
+            src="./avatar.png"
+            alt="avatar of Yang Zhan"
+            className="mt-4 h-24 w-24 rounded-full border border-black"
+          />
+          <h1 className="font-sans text-3xl font-bold">Yang Zhan</h1>
+        </div>
+        <nav className="flex flex-wrap space-x-2 text-xl font-light text-gray">
+          <NavButtonList names={["Academic", "About", "Links"]} />
+        </nav>
       </div>
-      <nav className="flex flex-wrap space-x-2 text-xl font-light text-gray">
-        <NavButtonList names={["Academic", "About", "Links"]} />
-      </nav>
+      <span className="flex w-full items-center justify-center space-x-2">
+        <NewsWidget />
+        <LocationWidget />
+      </span>
     </div>
   );
 };
