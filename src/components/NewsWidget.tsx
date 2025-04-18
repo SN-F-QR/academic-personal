@@ -37,7 +37,8 @@ const NewsWidget = () => {
         <h3 className="font-serif text-sm font-semibold">News</h3>
       </span>
       <div className="flex h-16 flex-col items-center justify-evenly space-y-1 overflow-hidden pr-1 lg:h-auto">
-        {newList}
+        {newList[0]}
+        <div className="hidden w-full lg:block">{newList[1]}</div>
       </div>
     </div>
   );
