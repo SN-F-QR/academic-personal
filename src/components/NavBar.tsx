@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import LocationWidget from "./LocationWidget";
+import NewsWidget from "./NewsWidget";
 import React from "react";
 
 const NavBar: React.FC = () => {
@@ -24,6 +25,7 @@ const NavBar: React.FC = () => {
       <nav className="flex flex-col space-y-1 text-xl font-light text-gray">
         <NavButtonList names={["Academic", "About", "Links"]} />
       </nav>
+      <NewsWidget />
       <LocationWidget />
     </div>
   );
