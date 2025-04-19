@@ -31,7 +31,7 @@ const NewsWidget = () => {
     ));
 
   return (
-    <div className="flex h-28 max-w-54 flex-1 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif md:h-auto">
+    <div className="flex h-28 max-w-54 flex-1 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif shadow-md md:h-auto">
       <span className="flex w-full items-center space-x-1 pt-1 pb-2 text-purple-strong">
         <Newspaper className="size-4" />
         <h3 className="font-serif text-sm font-semibold">News</h3>

@@ -77,7 +77,7 @@ const NavButton: React.FC<{
     <NavLink
       to={path}
       className={({ isActive }) =>
-        `mt-1 h-10 flex-1 cursor-pointer rounded-xl lg:max-w-54 lg:flex-auto ${isActive ? "bg-purple-mid text-purple-strong shadow-sm" : "bg-[#f5f4ff]/75"} animated`
+        `mt-1 h-10 flex-1 cursor-pointer rounded-xl lg:max-w-54 lg:flex-auto ${isActive ? "bg-purple-mid text-purple-strong shadow-md" : "bg-[#f5f4ff]/75 shadow-xs"} animated`
       }
     >
       <div className="flex h-full justify-center lg:justify-start">
