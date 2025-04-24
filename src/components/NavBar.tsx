@@ -33,13 +33,13 @@ const NavBar: React.FC = () => {
 
 export const InlineNavBar: React.FC = () => {
   return (
-    <div className="flex w-full flex-col lg:hidden">
+    <div className="flex w-full flex-col pb-4 lg:hidden">
       <div className="flex w-full flex-col space-y-4 pb-4 lg:hidden">
         <div className="flex items-center space-x-4">
           <img
             src="./avatar.png"
             alt="avatar of Yang Zhan"
-            className="mt-4 h-24 w-24 rounded-full border border-black"
+            className="mt-4 h-24 w-24 rounded-full border border-purple-mid"
           />
           <h1 className="font-sans text-3xl font-bold">Yang Zhan</h1>
         </div>

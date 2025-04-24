@@ -9,7 +9,7 @@ const WithNavBarLayout = () => {
       <InlineNavBar />
       <div className="flex flex-grow flex-col">
         <Outlet />
-        <div className="flex-grow place-content-end lg:ml-16">
+        <div className="mt-16 flex-grow place-content-end lg:ml-16">
           <Footer />
         </div>
       </div>
