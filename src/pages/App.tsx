@@ -4,6 +4,7 @@ import Links from "./Links";
 import WithNavBarLayout from "../components/WithNavBarLayout";
 import About from "./About";
 import Resume from "./Resume";
+import NotFound from "./NotFound";
 
 function App() {
   const pageStyle =
@@ -20,6 +21,7 @@ function App() {
               <Route path="/links" element={<Links pageStyle={pageStyle} />} />
             </Route>
             <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>

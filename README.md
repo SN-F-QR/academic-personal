@@ -28,6 +28,8 @@ A **simpler** way is to directly connect the project to Cloudflare Pages, explor
 
 :warning: _this method disables the github contribution visualization_
 
+---
+
 ### Local Development
 
 ```bash
