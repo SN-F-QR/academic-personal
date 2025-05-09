@@ -3,6 +3,7 @@
 
 @theme {
   --font-sans: "Inter", "sans-serif";
+  --font-mono: "JetBrains Mono", "Menlo", "monospace";
   --color-gray: #666666;
   --color-purple-strong: #7259ff;
   --color-purple-light: #e5eaf0;

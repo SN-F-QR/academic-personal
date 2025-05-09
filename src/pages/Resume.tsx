@@ -1,6 +1,6 @@
 import Markdown from "react-markdown";
 import ResumeContent from "../content/resume.mdx";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BookDown } from "lucide-react";
 
 const Resume: React.FC = () => {
   return (
@@ -29,8 +29,9 @@ export const RHeader: React.FC<{
       </a>
       <p className="m-0 text-sm">{description}</p>
       {cvUrl && (
-        <a className="text-sm" href={cvUrl} download>
-          Download
+        <a className="mt-1 flex items-center" href={cvUrl} download>
+          <BookDown className="mr-1 inline size-4 align-text-top" />
+          <p className="m-0 text-sm">Download</p>
         </a>
       )}
     </header>
@@ -59,7 +60,7 @@ export const RItem: React.FC<{
 }> = ({ title, startTime, endTime, subtitle, description, url }) => {
   return (
     <div className="flex w-full flex-col text-sm md:flex-row">
-      <div className="mr-12 mb-1 w-full max-w-28 font-light text-gray-700">{`${startTime}${endTime ? ` - ${endTime}` : ""}`}</div>
+      <div className="mr-14 mb-1 w-full max-w-32 font-mono font-light text-gray-700">{`${startTime}${endTime ? `-${endTime}` : ""}`}</div>
 
       <div className="flex flex-1 flex-col space-y-1">
         <div className="text-black">
@@ -77,7 +78,7 @@ export const RItem: React.FC<{
           <div className="">
             <Markdown
               components={{
-                p: ({ node, ...props }) => (
+                p: ({ ...props }) => (
                   <p
                     className="my-2 text-sm font-light text-gray-700 first:mt-0"
                     {...props}
