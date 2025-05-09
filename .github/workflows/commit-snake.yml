@@ -10,10 +10,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  create_snake:
+  create_status_images:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Generate commit snake
         uses: Platane/snk/svg-only@v3
@@ -37,6 +38,13 @@ jobs:
         with:
           node-version: 22
 
+      - name: Generate google static map
+        uses: sn-f-qr/google-map-generator@v1
+        with:
+          address: "Shinjuku, Tokyo"
+          zoom: 8
+          output: "public/generated-map.png"
+
       - name: Install and Build
         run: |
           npm ci
@@ -50,7 +58,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: create_snake
+    needs: create_status_images
     runs-on: ubuntu-latest
     permissions:
       contents: read
