@@ -41,8 +41,9 @@ jobs:
       - name: Generate google static map
         uses: sn-f-qr/google-map-generator@v1
         with:
+          google_static_map_api_key: ${{ secrets.MAP_API_KEY }}
           address: "Shinjuku, Tokyo"
-          zoom: 8
+          zoom: "8"
           output: "public/generated-map.png"
 
       - name: Install and Build
