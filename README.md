@@ -60,6 +60,13 @@ You may refer to the HTML-like contents in these MDX files to use some design co
 - Update new images (avatar, map for widget) or PDF files in the `public/` directory
 - Add new figures to `src/assets/` directory for `SinglePubCard`
 
+### Update the location widget
+
+1. Add your `secrets` of `MAP_API_KEY` of Google Map static api to > Settings > Secrets and variables > Actions
+2. Adjust the `address` and `zoom` in `./github/workflows/.yml` for your location
+
+More details for the [map generation](https://github.com/SN-F-QR/google-map-generator)
+
 ### Fonts
 
 This project uses Google Fonts, adjust `index.css` and `index.html` to customize
