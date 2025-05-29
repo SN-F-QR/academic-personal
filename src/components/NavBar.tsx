@@ -4,16 +4,8 @@ import NewsWidget from "./NewsWidget";
 import React from "react";
 
 const NavBar: React.FC = () => {
-  // const navButtons = ["Academic", "About", "Links"].map((name, index) => {
-  //   let path = name.toLowerCase();
-  //   if (index === 0) {
-  //     path = "";
-  //   }
-  //   return <NavButton key={`nav-button-${name}`} name={name} path={path} />;
-  // });
-
   return (
-    <div className="sticky top-12 hidden h-full max-w-54 shrink-0 flex-col justify-items-center space-y-4 font-sans lg:flex">
+    <div className="hidden w-54 shrink-0 flex-col justify-items-center space-y-4 font-sans lg:flex">
       <img
         src="./avatar.png"
         alt="avatar of Yang Zhan"
@@ -33,8 +25,8 @@ const NavBar: React.FC = () => {
 
 export const InlineNavBar: React.FC = () => {
   return (
-    <div className="flex w-full flex-col pb-4 lg:hidden">
-      <div className="flex w-full flex-col space-y-4 pb-4 lg:hidden">
+    <div className="w-full max-w-2xl pb-4 lg:hidden">
+      <div className="flex w-full flex-col space-y-4 pb-4">
         <div className="flex items-center space-x-4">
           <img
             src="./avatar.png"

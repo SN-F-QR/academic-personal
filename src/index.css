@@ -10,6 +10,12 @@
   --color-purple-mid: #bbc6ef;
 }
 
+body {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 @layer components {
   .markdown {
     @apply prose text-gray;
@@ -45,5 +51,23 @@
 
   .animated {
     @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply hidden;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-purple-mid;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-purple-strong/50;
   }
 }
