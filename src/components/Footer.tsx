@@ -3,7 +3,7 @@ import GithubIcon from "/github-mark.svg";
 const Footer = () => {
   return (
     <footer className="font-sans text-xs font-light text-gray">
-      <p>Last updated 2025-05-29</p>
+      <p>Last updated 2025-08-11</p>
       <span className="mt-1 inline-flex">
         <p>&copy; Designed by Yang Zhan. Code available on</p>
         <a href="https://github.com/SN-F-QR/academic-personal">
