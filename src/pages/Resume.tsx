@@ -4,7 +4,7 @@ import { ArrowUpRight, BookDown } from "lucide-react";
 
 const Resume: React.FC = () => {
   return (
-    <div className="markdown flex h-full w-auto max-w-2xl flex-col place-self-center overflow-hidden">
+    <div className="markdown flex h-full w-auto max-w-2xl flex-col place-self-center">
       <ResumeContent />
       <footer>
         <p className="text-xs font-light">Last updated 2025-04-13</p>
