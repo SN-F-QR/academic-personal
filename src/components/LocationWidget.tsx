@@ -2,7 +2,7 @@ const LocationWidget = () => {
   return (
     <a
       className="h-28 max-w-54 flex-1 overflow-hidden rounded-3xl shadow-md"
-      href="https://www.google.com/maps/place/Tokyo"
+      href="https://www.google.com/maps/place/Raleigh"
     >
       <div className="relative">
         <div className="absolute top-[35%] left-[35%] z-10 size-8">
@@ -15,14 +15,14 @@ const LocationWidget = () => {
         </div>
         <img
           src="./generated-map.png"
-          alt="google map of Tokyo"
+          alt="google map of Raleigh"
           className="h-28 w-full scale-[2.5] object-contain pr-2"
         />
         <div className="absolute bottom-1/12 left-1/12 h-6 w-14">
           <div className="relative flex h-full w-full items-center justify-center">
             <div className="absolute h-full w-full translate-x-0 rounded-lg bg-white/70"></div>
             <p className="absolute text-sm text-purple-strong opacity-100">
-              Tokyo
+              Raleigh
             </p>
           </div>
         </div>
