@@ -49,7 +49,7 @@ const CardInfo: React.FC<PubCardProps> = (props) => {
           {props.title}
         </div>
         <div className="flex shrink place-items-center justify-between italic">
-          <div className="line-clamp-1">{props.author}</div>
+          <div className="line-clamp-2">{props.author}</div>
           <div className="shrink-0">{props.conference}</div>
         </div>
         <div className="place-content-center pb-1 sm:line-clamp-4">
@@ -59,7 +59,9 @@ const CardInfo: React.FC<PubCardProps> = (props) => {
 
       <div className="flex place-items-center space-x-2">
         <IconButton icon={FileText} name="PDF" url={props.pdfPath} />
-        <IconButton icon={Link} name="URL" url={props.link} />
+        {props.link == "" ? null : (
+          <IconButton icon={Link} name="URL" url={props.link} />
+        )}
         <span className="w-full grow"></span>
         {props.techIcon && (
           <img
