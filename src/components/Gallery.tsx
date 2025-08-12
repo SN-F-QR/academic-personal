@@ -39,7 +39,7 @@ export const SingleImage: React.FC<{ image: string }> = ({ image }) => {
     <div className="h-full">
       <img
         src={image}
-        className={`m-0 w-full cursor-pointer object-cover ${isExpanded ? "h-96" : "h-48"} animated sm:h-full sm:cursor-default`}
+        className={`m-0 w-full cursor-pointer object-cover ${isExpanded ? "h-96" : "h-48"} animated sm:h-full sm:cursor-default sm:object-contain`}
         alt="a figure in this paper"
         onClick={handleClick}
       />
