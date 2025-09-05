@@ -36,7 +36,7 @@ export const SingleImage: React.FC<{ image: string }> = ({ image }) => {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div className="h-full">
+    <div className="h-full bg-gray-100">
       <img
         src={image}
         className={`m-0 w-full cursor-pointer object-cover ${isExpanded ? "h-96" : "h-48"} animated sm:h-full sm:cursor-default sm:object-contain`}
