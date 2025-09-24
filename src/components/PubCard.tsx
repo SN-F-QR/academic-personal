@@ -49,7 +49,7 @@ const CardInfo: React.FC<PubCardProps> = (props) => {
           {props.title}
         </div>
         <div className="flex shrink place-items-center justify-between italic">
-          <div className="line-clamp-2">{props.author}</div>
+          <div className="line-clamp-2 whitespace-pre-line">{props.author}</div>
           <div className="shrink-0">{props.conference}</div>
         </div>
         <div className="place-content-center pb-1 sm:line-clamp-4">
@@ -76,16 +76,3 @@ const CardInfo: React.FC<PubCardProps> = (props) => {
 };
 
 export default PubCard;
-
-export const testProps: PubCardProps = {
-  title:
-    "Effect of Presentation Methods on User Experiences and Perception in VR Shopping Recommender Systems",
-  author: "Yang Zhan, Tatsuo Nakajima",
-  conference: "SIGIR-AP 24",
-  description:
-    "Why people enjoy shopping for virtual goods? We explored how functionality and social experiences come together to shape the novel VR shopping experience.",
-  imagePaths: [],
-  link: "https://google.com",
-  pdfPath: "Test PDF Path",
-  techIcon: "unity",
-};

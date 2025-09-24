@@ -7,7 +7,7 @@ const Resume: React.FC = () => {
     <div className="markdown flex h-full w-auto max-w-2xl flex-col place-self-center">
       <ResumeContent />
       <footer>
-        <p className="text-xs font-light">Last updated 2025-08-11</p>
+        <p className="text-xs font-light">Last updated 2025-09-24</p>
       </footer>
     </div>
   );
