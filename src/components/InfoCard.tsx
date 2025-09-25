@@ -4,6 +4,7 @@ import { useState } from "react";
 export type InfoCardProps = {
   title: string;
   author: string;
+  showFullAuthor: boolean;
   place?: string;
 };
 
@@ -21,7 +22,9 @@ const InfoCard: React.FC<InfoCardProps> = (props) => {
         {props.title}
       </h3>
       <div className="flex place-items-center justify-between space-x-3 italic">
-        <div className="line-clamp-1">{props.author}</div>
+        <div className={props.showFullAuthor ? "" : "line-clamp-1"}>
+          {props.author}
+        </div>
         <div className="shrink-0">{props.place}</div>
       </div>
     </div>
@@ -39,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           setIsExpanded((prev) => !prev);
         }}
       >
-        <InfoCard {...props} />
+        <InfoCard {...props} showFullAuthor={isExpanded} />
         <ChevronRight
           className={`size-6 place-self-center ${isExpanded ? "rotate-90" : "rotate-0"} animated`}
         />
@@ -76,15 +79,3 @@ const TagText: React.FC<{ text: string }> = ({ text }) => {
 };
 
 export default InfoCard;
-
-export const testInfo: ProjectCardProps = {
-  title:
-    "Balancing Real-world Interaction and VR Immersion with AI Vision Robotic Arm",
-  author:
-    "Xiaoran Yang, Yang Zhan, Yukiko Iwasaki, Miaohui Shi, Shijie Tang, Hiroyasu Iwata",
-  place: "ICMA, 2023",
-  tags: ["VR", "AI", "Robotics"],
-  abstract:
-    "With the widespread adoption of Virtual Reality (VR) technology, VR devices can be more realistic and make the tasks they perform feel real to the user. It is this sense of realism that makes more and more people are using VR headsets. While using VR devices, the need to interact with the real world will also exist. For example, when people are using a VR headset to study and work, they have a physiological need (thirst, hunger, etc.), and need to interact with reality. But the closed nature of the VR headset causes this interaction to be very disruptive to the immersion of the user’s current task. To address this issue, we propose an interaction method that combines an AI vision algorithm and a robotic arm to preserve immersion during task performance in VR. This method addresses the challenge of interacting with the real world while using closed VR devices. Our experiments show that our method outperforms see-through and mapping methods, allowing users to quickly re-immerse themselves after interruptions and reducing interruptions during real-world task performance. Future research will focus on improving this method without sensitization and expanding the range of real-world operations that can be performed.",
-  link: "https://www.example.com",
-};
