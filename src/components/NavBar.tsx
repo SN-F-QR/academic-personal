@@ -9,7 +9,7 @@ const NavBar: React.FC = () => {
       <img
         src="./avatar.png"
         alt="avatar of Yang Zhan"
-        className="mt-4 h-32 w-32 rounded-full border border-purple-mid"
+        className="mt-4 h-32 w-32 rounded-full border border-purple-mid object-cover"
       />
       <h1 className="place-self-start font-sans text-3xl font-bold">
         Yang Zhan
