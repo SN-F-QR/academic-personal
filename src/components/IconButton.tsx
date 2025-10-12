@@ -1,5 +1,7 @@
+import { type LucideIcon  } from "lucide-react";
+
 type IconButtonProps = {
-  icon: React.ForwardRefExoticComponent<any>;
+  icon: LucideIcon;
   name: string;
   url: string;
 };
