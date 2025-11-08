@@ -6,7 +6,7 @@ on:
       - main
   schedule:
     # Excute weekly
-    - cron: "0 3 * * 0"
+    - cron: '0 3 * * 0'
   workflow_dispatch:
 
 jobs:
@@ -42,9 +42,9 @@ jobs:
         uses: sn-f-qr/google-map-generator@v1
         with:
           google_static_map_api_key: ${{ secrets.MAP_API_KEY }}
-          address: "Raleigh"
-          zoom: "6"
-          output: "public/generated-map.png"
+          address: 'Raleigh'
+          zoom: '6'
+          output: 'public/generated-map.png'
 
       - name: Install and Build
         run: |

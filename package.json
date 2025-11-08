@@ -9,10 +9,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "solid-js": "^1.9.9"
+    "@mdx-js/rollup": "^3.1.1",
+    "@tailwindcss/vite": "^4.1.17",
+    "solid-js": "^1.9.9",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@types/node": "^24.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-solid": "^0.14.5",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "typescript": "~5.9.3",
     "vite": "^7.1.7",
     "vite-plugin-solid": "^2.11.8"
