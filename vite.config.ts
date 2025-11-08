@@ -4,5 +4,5 @@ import mdx from '@mdx-js/rollup';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [{ enforce: 'pre', ...mdx() }, solid(), tailwindcss()],
+  plugins: [mdx({ jsxImportSource: 'solid-js/h' }), solid(), tailwindcss()],
 });

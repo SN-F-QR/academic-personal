@@ -12,11 +12,13 @@
     "@mdx-js/rollup": "^3.1.1",
     "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.1.17",
+    "lucide-solid": "^0.553.0",
     "solid-js": "^1.9.9",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^24.6.0",
     "@typescript-eslint/eslint-plugin": "^8.46.3",
     "@typescript-eslint/parser": "^8.46.3",
