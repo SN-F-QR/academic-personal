@@ -1,7 +1,8 @@
 import NavBar, { InlineNavBar } from './NavBar';
 import Footer from './Footer';
+import { type ParentProps } from 'solid-js';
 
-const WithNavBarLayout = (props: { children: Element }) => {
+function WithNavBarLayout(props: ParentProps) {
   return (
     <div class="relative flex min-h-dvh w-full flex-col justify-center pb-4 transition-all max-lg:items-center lg:flex-row xl:pr-32">
       <div class="sticky top-8 h-full">
@@ -16,6 +17,6 @@ const WithNavBarLayout = (props: { children: Element }) => {
       </div>
     </div>
   );
-};
+}
 
 export default WithNavBarLayout;
