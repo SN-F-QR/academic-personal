@@ -1,73 +1,68 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-@theme {
-  --font-sans: "Inter", "sans-serif";
-  --font-mono: "JetBrains Mono", "Menlo", "monospace";
-  --color-gray: #666666;
-  --color-purple-strong: #7259ff;
-  --color-purple-light: #e5eaf0;
-  --color-purple-mid: #bbc6ef;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
 }
 
 body {
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-@layer components {
-  .markdown {
-    @apply prose text-gray;
-  }
-
-  .markdown p {
-    @apply my-4 text-base font-normal has-[+ul]:mb-0;
-  }
-
-  .markdown h2 {
-    @apply mt-4 mb-2 text-2xl font-bold text-black;
-  }
-
-  .markdown ul {
-    @apply my-0 marker:text-gray;
-  }
-
-  .markdown li {
-    @apply text-base;
-  }
-
-  .markdown a {
-    @apply font-normal text-purple-strong no-underline;
-  }
-
-  .markdown a:hover {
-    @apply font-normal text-purple-strong underline;
-  }
-
-  .markdown em {
-    @apply text-gray-700;
-  }
-
-  .animated {
-    @apply transition-all duration-300 ease-in-out;
-  }
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
-@layer utilities {
-  .scrollbar::-webkit-scrollbar {
-    @apply w-2;
-  }
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 
-  .scrollbar::-webkit-scrollbar-track {
-    @apply hidden;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
   }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-purple-mid;
+  a:hover {
+    color: #747bff;
   }
-
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-purple-strong/50;
+  button {
+    background-color: #f9f9f9;
   }
 }
