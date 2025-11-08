@@ -70,6 +70,7 @@ function NavButton({ name, path }: { name: string; path: string }) {
       class="mt-1 h-10 flex-1 cursor-pointer rounded-xl lg:max-w-54 lg:flex-auto"
       activeClass="bg-purple-mid text-purple-strong shadow-md"
       inactiveClass="bg-[#f5f4ff]/75 shadow-xs"
+      end={true}
     >
       <div class="flex h-full justify-center lg:justify-start">
         <span class="min-w-4 place-self-center px-4">{name}</span>
