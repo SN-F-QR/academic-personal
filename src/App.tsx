@@ -5,6 +5,7 @@ import WithNavBarLayout from './components/WithNavBarLayout';
 import Academic from './contents/academic.mdx';
 import About from './contents/about.mdx';
 import Links from './contents/links.mdx';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             path="/links"
             component={() => <ContentLayout title="Links">{(<Links />) as Element}</ContentLayout>}
           />
+          <Route path="*" component={NotFound} />
         </Route>
       </Router>
     </div>
