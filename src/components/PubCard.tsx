@@ -30,7 +30,7 @@ function SinglePubCard(props: PubCardProps) {
 
 function CardInfo(props: PubCardProps) {
   return (
-    <div class="flex h-full w-full flex-col justify-evenly space-y-1 text-sm">
+    <div class="flex h-full w-full flex-col justify-between space-y-1 text-sm">
       <div class="flex w-full flex-col space-y-1">
         <div class="shrink place-content-center font-sans font-semibold text-gray-700 sm:line-clamp-3">
           {props.title}
