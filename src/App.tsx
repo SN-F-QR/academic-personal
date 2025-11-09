@@ -15,17 +15,15 @@ function App() {
         <Route path="/" component={WithNavBarLayout}>
           <Route
             path="/"
-            component={() => (
-              <ContentLayout title="Academic">{(<Academic />) as Element}</ContentLayout>
-            )}
+            component={() => <ContentLayout title="Academic">{<Academic />}</ContentLayout>}
           />
           <Route
             path="/about"
-            component={() => <ContentLayout title="About">{(<About />) as Element}</ContentLayout>}
+            component={() => <ContentLayout title="About">{<About />}</ContentLayout>}
           />
           <Route
             path="/links"
-            component={() => <ContentLayout title="Links">{(<Links />) as Element}</ContentLayout>}
+            component={() => <ContentLayout title="Links">{<Links />}</ContentLayout>}
           />
           <Route path="*" component={NotFound} />
         </Route>

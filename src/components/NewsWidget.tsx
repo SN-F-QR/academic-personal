@@ -57,6 +57,7 @@ export function NewsItem({
           <A
             href={link ?? ''}
             target="_blank"
+            rel="noopener noreferrer"
             class="underline decoration-purple-mid decoration-dashed decoration-2"
           >
             {Title}

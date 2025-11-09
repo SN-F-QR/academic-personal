@@ -1,6 +1,6 @@
-import { children } from 'solid-js';
+import { children, type ParentProps } from 'solid-js';
 
-function CardList(props: { children: Element }) {
+function CardList(props: ParentProps) {
   const childrenComponent = children(() => props.children);
 
   return <div class="flex flex-col place-items-center space-y-6 pb-6">{childrenComponent()}</div>;
