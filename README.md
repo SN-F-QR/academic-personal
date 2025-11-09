@@ -8,6 +8,7 @@ A personal academic website built with Solid, TypeScript, and Vite, featuring Ta
 - Markdown-based content management
 - Some widget-like designs (personal location, recent news)
 - Responsive resume page
+- Reduced bundle size (~26 KB Gzipped Bundle Size)
 - [GitHub contribution visualization](https://github.com/marketplace/actions/generate-snake-game-from-github-contribution-grid)
 
 ## Quick Start
