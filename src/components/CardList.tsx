@@ -1,13 +1,9 @@
-type CardList = {
-  children: React.ReactElement;
-};
+import { children } from 'solid-js';
 
-const CardList: React.FC<CardList> = ({ children }) => {
-  return (
-    <div className="flex flex-col place-items-center space-y-6 pt-2 pb-6">
-      {children}
-    </div>
-  );
-};
+function CardList(props: { children: Element }) {
+  const childrenComponent = children(() => props.children);
+
+  return <div class="flex flex-col place-items-center space-y-6 pb-6">{childrenComponent()}</div>;
+}
 
 export default CardList;

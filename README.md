@@ -1,6 +1,6 @@
 # Academic Personal Website
 
-A personal academic website built with React, TypeScript, and Vite, featuring Tailwind CSS for styling and MDX for content management.
+A personal academic website built with Solid, TypeScript, and Vite, featuring Tailwind CSS for styling and MDX for content management.
 
 ## Features
 
@@ -26,15 +26,17 @@ By default, its workflow deploys the project to Cloudflare Pages.
 
 A **simpler** way is to directly connect the project to Cloudflare Pages, explore more [here](https://developers.cloudflare.com/pages/get-started/git-integration/). Also, remember to delete the `./github/workflows/commit-snake.yml`.
 
-:warning: _this method disables the github contribution visualization_
+> [!WARNING]
+>
+> This method disables the github contribution visualization
 
 ---
 
 ### Local Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## Customizing Content

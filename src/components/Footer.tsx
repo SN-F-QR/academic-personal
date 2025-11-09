@@ -1,13 +1,11 @@
-import GithubIcon from "/github-mark.svg";
-
 const Footer = () => {
   return (
-    <footer className="font-sans text-xs font-light text-gray">
-      <p>Last updated 2025-09-24</p>
-      <span className="mt-1 inline-flex">
+    <footer class="font-sans text-xs font-light text-gray-500">
+      <p>Last updated 2025-11-08</p>
+      <span class="mt-1 inline-flex">
         <p>&copy; Designed by Yang Zhan. Code available on</p>
         <a href="https://github.com/SN-F-QR/academic-personal">
-          <img src={GithubIcon} className="ml-1 size-3" />
+          <img src="https://cdn.simpleicons.org/github/7259ff" class="ml-1 size-3" />
         </a>
         <p>.</p>
       </span>

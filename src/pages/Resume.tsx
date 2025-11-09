@@ -1,98 +1,100 @@
-import Markdown from "react-markdown";
-import ResumeContent from "../content/resume.mdx";
-import { ArrowUpRight, BookDown } from "lucide-react";
+import ResumeContent from '../contents/resume.mdx';
+import Footer from '../components/Footer';
+import { ArrowUpRight, BookDown } from 'lucide-solid';
+import { type ParentProps, type JSX, Show } from 'solid-js'; // type for children prop
+import { A } from '@solidjs/router';
 
-const Resume: React.FC = () => {
+function Resume() {
   return (
-    <div className="markdown flex h-full w-auto max-w-2xl flex-col place-self-center">
-      <ResumeContent />
-      <footer>
-        <p className="text-xs font-light">Last updated 2025-09-24</p>
-      </footer>
+    <div class="flex w-auto max-w-2xl flex-col place-self-center py-4">
+      <div class="markdown flex flex-col">
+        <ResumeContent />
+      </div>
+      <div class="pt-8">
+        <Footer />
+      </div>
     </div>
   );
-};
+}
 
-export const RHeader: React.FC<{
+export function RHeader({
+  name,
+  description,
+  homepage,
+  cvUrl,
+}: {
   name: string;
   description: string;
   homepage?: string;
   cvUrl?: string;
-}> = ({ name, description, homepage, cvUrl }) => {
+}) {
   return (
     <header>
-      <a className="" href={homepage}>
+      <A href={homepage ?? ''}>
         <h2>
           {name}
-          <ArrowUpRight className="ml-1 inline size-4 align-text-top" />
+          <ArrowUpRight class="ml-1 inline size-4 align-text-top" />
         </h2>
-      </a>
-      <p className="m-0 text-sm">{description}</p>
-      {cvUrl && (
-        <a className="mt-1 flex items-center" href={cvUrl} download>
-          <BookDown className="mr-1 inline size-4 align-text-top" />
-          <p className="m-0 text-sm">Download</p>
-        </a>
-      )}
+      </A>
+      <p class="m-0 text-sm">{description}</p>
+      <Show when={cvUrl}>
+        {cvUrl && (
+          <A class="mt-1 flex items-center" href={cvUrl} download="CV_YangZhan.pdf">
+            <BookDown class="mr-1 inline size-4 align-text-top" />
+            <p class="m-0 text-sm">Download</p>
+          </A>
+        )}
+      </Show>
     </header>
   );
-};
+}
 
-export const RSection: React.FC<{
-  title: string;
-  children: React.ReactNode;
-}> = ({ title, children }) => {
+export function RSection(props: ParentProps<{ title: string }>) {
   return (
-    <section className="my-4">
-      <h3 className="my-4">{title}</h3>
-      <div className="flex flex-col space-y-4">{children}</div>
+    <section class="my-4">
+      <h3 class="my-4">{props.title}</h3>
+      <div class="flex flex-col space-y-4">{props.children}</div>
     </section>
   );
-};
+}
 
-export const RItem: React.FC<{
+export function RItem({
+  title,
+  startTime,
+  endTime,
+  subtitle,
+  description,
+  url,
+}: {
   title: string;
   startTime: string;
   endTime?: string;
-  subtitle?: string;
-  description?: string;
+  subtitle?: JSX.Element | string;
+  description?: JSX.Element | string;
   url?: string;
-}> = ({ title, startTime, endTime, subtitle, description, url }) => {
+}) {
   return (
-    <div className="flex w-full flex-col text-sm md:flex-row">
-      <div className="mr-14 mb-1 w-full max-w-32 font-mono font-light text-gray-700">{`${startTime}${endTime ? `-${endTime}` : ""}`}</div>
+    <div class="flex w-full flex-col text-sm md:flex-row">
+      <div class="mr-14 mb-1 w-full max-w-32 font-mono font-light text-gray-700">{`${startTime}${endTime ? `-${endTime}` : ''}`}</div>
 
-      <div className="flex flex-1 flex-col space-y-1">
-        <div className="text-black">
-          {url ? (
-            <a className="cursor-pointer text-black" href={url}>
+      <div class="flex flex-1 flex-col space-y-1">
+        <div class="text-black">
+          <Show when={url} fallback={title}>
+            <A class="cursor-pointer text-black" href={url!}>
               {title}
-              <ArrowUpRight className="ml-1 inline size-3 align-text-top" />
-            </a>
-          ) : (
-            title
-          )}
+              <ArrowUpRight class="ml-1 inline size-3 align-text-top" />
+            </A>
+          </Show>
         </div>
-        {subtitle && <div className="font-light text-gray-700">{subtitle}</div>}
-        {description && (
-          <div className="">
-            <Markdown
-              components={{
-                p: ({ ...props }) => (
-                  <p
-                    className="my-2 text-sm font-light text-gray-700 first:mt-0"
-                    {...props}
-                  />
-                ),
-              }}
-            >
-              {description}
-            </Markdown>
-          </div>
-        )}
+        <Show when={subtitle}>
+          <div class="font-light text-gray-700">{subtitle}</div>
+        </Show>
+        <Show when={description}>
+          <div class="my-2 mt-0 text-sm font-light text-gray-700">{description}</div>
+        </Show>
       </div>
     </div>
   );
-};
+}
 
 export default Resume;

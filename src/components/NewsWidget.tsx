@@ -5,12 +5,13 @@ import {
   Trophy,
   Cat,
   Rabbit,
-} from "lucide-react";
-import newsData from "../content/news.json";
+  type LucideIcon,
+} from 'lucide-solid';
+import newsData from '../contents/news.json';
+import { A } from '@solidjs/router';
+import { Show } from 'solid-js';
 
-type IconType = React.ComponentType<{ className?: string }>;
-
-const iconMap: Record<string, IconType> = {
+const iconMap: Record<string, LucideIcon> = {
   award: Trophy,
   accept: PartyPopper,
   star: Sparkles,
@@ -18,48 +19,54 @@ const iconMap: Record<string, IconType> = {
   rabbit: Rabbit,
 };
 
-const NewsWidget = () => {
-  const newList: React.ReactNode[] = newsData
-    .slice(0, 2)
-    .map((item) => (
-      <NewsItem
-        title={item.title}
-        date={item.date}
-        type={item.type}
-        key={item.title}
-      />
-    ));
-
+function NewsWidget() {
   return (
-    <div className="flex h-28 max-w-54 flex-1 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif shadow-md md:h-auto">
-      <span className="flex w-full items-center space-x-1 pt-1 pb-2 text-purple-strong">
-        <Newspaper className="size-4" />
-        <h3 className="font-serif text-sm font-semibold">News</h3>
+    <div class="flex h-28 max-w-54 flex-1 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif shadow-sm md:h-auto">
+      <span class="flex w-full items-center space-x-1 pt-1 pb-2 text-purple-strong">
+        <Newspaper class="size-4" />
+        <h3 class="font-serif text-sm font-semibold">News</h3>
       </span>
-      <div className="flex h-16 flex-col items-center justify-evenly space-y-1 overflow-hidden pr-1 lg:h-auto">
-        {newList[0]}
-        <div className="hidden w-full lg:block">{newList[1]}</div>
+      <div class="flex h-16 flex-col items-center justify-evenly space-y-1 overflow-hidden pr-1 lg:h-auto">
+        <NewsItem {...newsData[0]} />
+        <div class="hidden w-full lg:block">
+          <NewsItem {...newsData[1]} />
+        </div>
       </div>
     </div>
   );
-};
+}
 
-export const NewsItem: React.FC<{
+export function NewsItem({
+  title,
+  date,
+  type,
+  link,
+}: {
   title: string;
   date: string;
   type: string;
-}> = ({ title, date, type }) => {
-  const Icon: IconType = iconMap[type] || PartyPopper;
+  link?: string;
+}) {
+  const Icon: LucideIcon = iconMap[type] ?? PartyPopper;
+  const Title = <p class="my-0 line-clamp-3 text-gray-700">{title}</p>;
 
   return (
-    <div className="border-gray-light flex w-full flex-grow items-center justify-between">
-      <div className="flex flex-col text-xs">
-        <p className="my-0 line-clamp-3 text-gray">{title}</p>
-        <p className="my-0 font-light text-gray">{date}</p>
+    <div class="border-gray-light flex w-full grow items-center justify-between select-none">
+      <div class="flex flex-col text-xs">
+        <Show when={link} fallback={Title}>
+          <A
+            href={link ?? ''}
+            target="_blank"
+            class="underline decoration-purple-mid decoration-dashed decoration-2"
+          >
+            {Title}
+          </A>
+        </Show>
+        <p class="my-0 font-light text-gray">{date}</p>
       </div>
-      <Icon className="size-5 shrink-0 text-purple-strong" />
+      <Icon class="size-5 shrink-0 text-purple-strong" />
     </div>
   );
-};
+}
 
 export default NewsWidget;

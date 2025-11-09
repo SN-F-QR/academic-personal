@@ -1,4 +1,5 @@
-import { type LucideIcon  } from "lucide-react";
+import { type LucideIcon } from 'lucide-solid';
+import { A } from '@solidjs/router';
 
 type IconButtonProps = {
   icon: LucideIcon;
@@ -6,16 +7,17 @@ type IconButtonProps = {
   url: string;
 };
 
-const IconButton: React.FC<IconButtonProps> = (props) => {
+function IconButton(props: IconButtonProps) {
   return (
-    <button
-      className="inline-flex cursor-pointer rounded-lg bg-purple-mid px-2 py-1 font-semibold"
-      onClick={() => window.open(props.url, "_blank")}
+    <A
+      href={props.url}
+      target="_blank"
+      class="animated flex cursor-pointer rounded-lg bg-purple-mid px-2 py-1 text-gray-500 hover:bg-indigo-300 hover:no-underline hover:shadow-xs"
     >
-      <props.icon className="mr-1 size-5" />
+      <props.icon class="mr-1 size-5" />
       {props.name}
-    </button>
+    </A>
   );
-};
+}
 
 export default IconButton;

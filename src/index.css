@@ -1,9 +1,10 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans: "Inter", "sans-serif";
-  --font-mono: "JetBrains Mono", "Menlo", "monospace";
+  --font-sans: 'Plus Jakarta Sans', 'Inter', 'sans-serif';
+  --font-serif: 'Playfair Display', 'Georgia', 'serif';
+  --font-mono: 'JetBrains Mono', 'Menlo', 'monospace';
   --color-gray: #666666;
   --color-purple-strong: #7259ff;
   --color-purple-light: #e5eaf0;
@@ -18,7 +19,7 @@ body {
 
 @layer components {
   .markdown {
-    @apply prose text-gray;
+    @apply prose text-gray-700;
   }
 
   .markdown p {
@@ -30,7 +31,7 @@ body {
   }
 
   .markdown ul {
-    @apply my-0 marker:text-gray;
+    @apply my-0 marker:text-gray-700;
   }
 
   .markdown li {
@@ -42,11 +43,11 @@ body {
   }
 
   .markdown a:hover {
-    @apply font-normal text-purple-strong underline;
+    @apply font-normal text-purple-strong underline decoration-dashed decoration-2;
   }
 
   .markdown em {
-    @apply text-gray-700;
+    @apply text-black;
   }
 
   .animated {

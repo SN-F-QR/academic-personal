@@ -1,6 +1,6 @@
 const NotFound = () => {
   return (
-    <div className="markdown">
+    <div class="markdown">
       <h2>404 - Not Found</h2>
       <p>The page you are visiting does not exist.</p>
       <p>

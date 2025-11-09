@@ -1,0 +1,108 @@
+import SinglePubCard from '../components/PubCard';
+import { InfoCard, ProjectCard } from '../components/InfoCard';
+import CardList from '../components/CardList';
+import { imagePaths } from '../utils/imageManager';
+
+Hi! I am a PhD student in Computer Science at NC State University, advised by [Dr. Georgie Qiao Jin](http://georgiejin.com/).
+
+Previously, I received my Master's degree in Computer Science from Waseda University, where I was advised by [Prof. Tatsuo Nakajima](https://scholar.google.com/citations?user=hVxdgeYAAAAJ&hl=en). I earned my bachelor's degree from the Electronic Information School at Wuhan University, supervised by [Prof. Guangyi Yang](https://scholar.google.com/citations?user=DiqJdPEAAAAJ&hl=en&view_op=list_works&sortby=pubdate). I was a research intern at Hong Kong University of Science and Technology, under the guidance of [Prof. Lik-Hang Lee](https://www.lhlee.com/) and [Prof. Pan Hui](https://panhui.people.ust.hk/index.html).
+
+I'm generally interested in eXtended Reality, User Interface, and Human-AI interaction.
+More specifically, I'm currently exploring:
+
+- Intuitive and effective interfaces for _learning in XR_
+- _Educational AI agents_ in interactive systems
+
+See my <a href="/resume">Resume</a>.
+
+## Publications
+
+<CardList>
+  <span />
+  <SinglePubCard
+    title="Exploring the Design of Context-Aware Widget Recommender System in Mixed Reality"
+    author={'Yiming Sun*, Yang Zhan*, Tatsuo Nakajima'}
+    conference="MoMM 25"
+    description="An LLM-powered system that recommends contextual MR widgets to users. Our findings show that while the recommendations improved user workflows, their usability depends on widget design and personalization."
+    imagePaths={imagePaths.get('widget-rec')}
+    link=""
+    pdfPath="/papers/vr_widget_rec.pdf"
+    techIcon="react,ts,unity,python"
+  />
+  <SinglePubCard
+    title="From Tool to Partner: Exploring the Roles of Embodiment on AI Agent in Pair Programming 🏅"
+    author="Xiaoran Yang, Yang Zhan, Noboru Matsuda, Qiao Jin"
+    conference="VL/HCC 25"
+    description="To address communication challenges in AI pair programming, this study investigates the role of an embodied AI agent in supporting programming learning and improving the user experience."
+    imagePaths={imagePaths.get('emb-ai')}
+    link=""
+    pdfPath="/papers/emb_pAIr_programming.pdf"
+    techIcon="unity,python"
+  />
+  <SinglePubCard
+    title="Effect of Presentation Methods on User Experiences and Perception in VR Shopping Recommender Systems"
+    author="Yang Zhan, Tatsuo Nakajima"
+    conference="SIGIR-AP 24"
+    description="We investigated how presentations of recommended products affect shopping, revealing users' expectation for attention cues in VR recommender system."
+    imagePaths={imagePaths.get('shop-rs')}
+    link="https://dl.acm.org/doi/10.1145/3673791.3698430"
+    pdfPath="/papers/vr_shopping_rs.pdf"
+    techIcon="unity,python"
+  />
+  <SinglePubCard
+    title="Investigating User Experience in Virtual Goods Shopping through a VR Diegetic In-Game Store 🏆"
+    author="Yiming Sun*, Yang Zhan*, Tatsuo Nakajima"
+    conference="AVI 24"
+    description="Why people enjoy shopping for virtual goods? We explored how functionality and social experiences come together to shape the novel VR shopping experience."
+    imagePaths={imagePaths.get('shop-avi')}
+    link="https://dl.acm.org/doi/10.1145/3656650.3656670"
+    pdfPath="/papers/vr_diegetic_shopping.pdf"
+    techIcon="unity"
+  />
+</CardList>
+
+## Research Projects
+
+<CardList>
+  <ProjectCard
+    title="Balancing Real-world Interaction and VR Immersion with AI Vision Robotic Arm"
+    author="Xiaoran Yang, Yang Zhan, Yukiko Iwasaki, Miaohui Shi, Shijie Tang, Hiroyasu Iwata"
+    place="ICMA, 2023"
+    tags={["VR", "AI", "Robotics"]}
+    abstract="With the widespread adoption of Virtual Reality (VR) technology, VR devices can be more realistic and make the tasks they perform feel real to the user. It is this sense of realism that makes more and more people are using VR headsets. While using VR devices, the need to interact with the real world will also exist. For example, when people are using a VR headset to study and work, they have a physiological need (thirst, hunger, etc.), and need to interact with reality. But the closed nature of the VR headset causes this interaction to be very disruptive to the immersion of the user’s current task. To address this issue, we propose an interaction method that combines an AI vision algorithm and a robotic arm to preserve immersion during task performance in VR. This method addresses the challenge of interacting with the real world while using closed VR devices. Our experiments show that our method outperforms see-through and mapping methods, allowing users to quickly re-immerse themselves after interruptions and reducing interruptions during real-world task performance. Future research will focus on improving this method without sensitization and expanding the range of real-world operations that can be performed."
+  link="https://ieeexplore.ieee.org/document/10215826"
+  />
+  <ProjectCard
+    title="Superpixel based no-reference Image Quality Transformer (SPIQ)"
+    author="Yang Zhan, supervised by Prof. Guangyi Yang"
+    place="EIS@WHU, 2022"
+    tags={["Superpixel", "Image Quality Assessment", "Transformer"]}
+    abstract={`Image Quality Assessment (IQA) evaluates the visual quality of digital images and is widely used in Computer Vision (CV). Recent high-performance IQA algorithms are mainly based on Convolutional Neural Networks (CNNs), but their fixed input size constraints prevent direct processing of images with varying dimensions. To address this, Transformers, which handle arbitrary-length sequences, have been introduced in IQA.
+
+    This paper proposes SPIQ, a novel no-reference IQA algorithm combining Transformers and superpixel-based spatial embeddings. The method employs a Residual Network (ResNet) for patch encoding, integrates superpixel spatial position embeddings, and utilizes a lightweight Transformer encoder for quality prediction. SPIQ directly evaluates images of any size, avoiding preprocessing-induced accuracy loss. Compared to conventional embeddings, superpixel-based spatial embeddings use fewer parameters while better capturing patch relationships.
+
+    Experiments on Koniq-10k, LIVE Challenge, and PaQ-2-PiQ datasets validate SPIQ’s accuracy. The study examines the patch embedding network’s sensitivity to input size and the effect of superpixel granularity. Results show that SPIQ outperforms mainstream IQA algorithms in prediction accuracy, demonstrating its effectiveness in real-world image quality assessment.`}
+    link=""
+
+/>
+
+  <ProjectCard
+    title="Deep Superpixel-based Network for Blind Image Quality Assessment"
+    author="Yang Zhan, Yuxuan Wang, supervised by Prof. Guangyi Yang"
+    place="EIS@WHU, 2021"
+    tags={["Superpixel", "IQA", "CNN"]}
+    abstract={`The goal of a blind image quality assessment (BIQA) model is to simulate the process of evaluating images by human eyes and accurately assess the quality of the image. Although many approaches effectively identify degradation, they do not fully consider the semantic content in images resulting in distortion. In order to fill this gap, we propose a deep adaptive superpixel-based network, namely DSN-IQA, to assess the quality of images based on multi-scale and superpixel segmentation. The DSN-IQA can adaptively accept arbitrary scale images as input images, making the assessment process similar to human perception. The network uses two models to extract multi-scale semantic features and generate a superpixel adjacency map. These two elements are united together via feature fusion to accurately predict image quality. Experimental results on different benchmark databases demonstrate that our algorithm is highly competitive with other approaches when assessing challenging authentic image databases. Also, due to an adaptive deep superpixel-based network, our model accurately assesses images with complicated distortion, much like the human eye.`}
+    link="https://arxiv.org/abs/2110.06564"
+
+/>
+
+</CardList>
+
+## Internships
+
+<CardList>
+  <InfoCard
+    title="Research intern at Hong Kong University of Science and Technology"
+    author="Supervised by Prof. Pan Hui and Prof. Lik-hang Lee, 2021"
+  />
+</CardList>
