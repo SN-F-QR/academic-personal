@@ -43,11 +43,11 @@ body {
   }
 
   .markdown a:hover {
-    @apply font-normal text-purple-strong underline;
+    @apply font-normal text-purple-strong underline decoration-dashed decoration-2;
   }
 
   .markdown em {
-    @apply text-gray-700;
+    @apply text-black;
   }
 
   .animated {

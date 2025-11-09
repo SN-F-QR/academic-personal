@@ -9,7 +9,8 @@ function NavBar() {
       <img
         src="./avatar.png"
         alt="avatar of Yang Zhan"
-        class="mt-4 h-32 w-32 rounded-full border border-purple-mid object-cover"
+        class="mt-4 h-32 w-32 rounded-full border border-purple-mid object-cover shadow-sm"
+        draggable={false}
       />
       <h1 class="place-self-start font-sans text-3xl font-bold">Yang Zhan</h1>
       <nav class="flex flex-col space-y-1 text-xl font-light text-gray">
@@ -35,7 +36,7 @@ export function InlineNavBar() {
           <img
             src="./avatar.png"
             alt="avatar of Yang Zhan"
-            class="mt-4 h-24 w-24 rounded-full border border-purple-mid"
+            class="mt-4 h-24 w-24 rounded-full border border-purple-mid shadow-sm"
           />
           <h1 class="font-sans text-3xl font-bold">Yang Zhan</h1>
         </div>
@@ -67,9 +68,9 @@ function NavButton({ name, path }: { name: string; path: string }) {
   return (
     <A
       href={`/${path}`}
-      class="mt-1 h-10 flex-1 cursor-pointer rounded-xl lg:max-w-54 lg:flex-auto"
-      activeClass="bg-purple-mid text-purple-strong shadow-md"
-      inactiveClass="bg-[#f5f4ff]/75 shadow-xs"
+      class="animated mt-1 h-10 flex-1 cursor-pointer rounded-xl lg:max-w-54 lg:flex-auto"
+      activeClass="bg-purple-mid text-purple-strong shadow-sm"
+      inactiveClass="bg-gray-50 hover:bg-gray-100"
       end={true}
     >
       <div class="flex h-full justify-center lg:justify-start">

@@ -1,11 +1,11 @@
-function ContentLayout(props: { title: string; children: Element }) {
+import { type ParentProps } from 'solid-js';
+
+function ContentLayout(props: ParentProps<{ title: string }>) {
   return (
     <div class="flex flex-col md:max-w-2xl">
       <div class="markdown">
-        <div class="w-full">
-          <h2 class="hidden lg:block">{props.title}</h2>
-          {props.children}
-        </div>
+        <h2 class="hidden lg:block">{props.title}</h2>
+        {props.children}
       </div>
     </div>
   );

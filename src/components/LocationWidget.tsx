@@ -1,7 +1,7 @@
 function LocationWidget() {
   return (
     <a
-      class="h-28 max-w-54 flex-1 overflow-hidden rounded-3xl shadow-md"
+      class="h-28 max-w-54 flex-1 overflow-hidden rounded-3xl shadow-sm"
       href="https://www.google.com/maps/place/Raleigh"
     >
       <div class="relative">
@@ -17,6 +17,7 @@ function LocationWidget() {
           src="./generated-map.png"
           alt="google map of Raleigh"
           class="h-28 w-full scale-[2.5] object-contain pr-2"
+          draggable={false}
         />
         <div class="absolute bottom-1/12 left-1/12 h-6 w-14">
           <div class="relative flex h-full w-full items-center justify-center">

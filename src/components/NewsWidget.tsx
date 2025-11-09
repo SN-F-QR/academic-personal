@@ -19,7 +19,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 function NewsWidget() {
   return (
-    <div class="flex h-28 max-w-54 flex-1 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif shadow-md md:h-auto">
+    <div class="flex h-28 max-w-54 flex-1 flex-col rounded-3xl bg-[#F5F5F5] px-4 py-2 font-serif shadow-sm md:h-auto">
       <span class="flex w-full items-center space-x-1 pt-1 pb-2 text-purple-strong">
         <Newspaper class="size-4" />
         <h3 class="font-serif text-sm font-semibold">News</h3>

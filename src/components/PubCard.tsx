@@ -15,7 +15,7 @@ export type PubCardProps = {
 
 function SinglePubCard(props: PubCardProps) {
   return (
-    <div class="min-w-full overflow-hidden rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 shadow-md">
+    <div class="min-w-full overflow-hidden rounded-3xl bg-[#f5f4ff]/50 shadow-sm">
       <div class="h-full sm:flex">
         <div class="basis-1/3 sm:shrink-0">
           <SingleImage image={props.imagePaths[0]} />
@@ -53,6 +53,7 @@ function CardInfo(props: PubCardProps) {
             src={`https://skillicons.dev/icons?i=${props.techIcon}&theme=dark`}
             class="m-0 h-7"
             alt="Tech Icon"
+            draggable={false}
           />
         )}
       </div>
@@ -73,6 +74,7 @@ function SingleImage({ image }: { image: string }) {
         classList={{ 'h-96': isExpanded() }}
         alt="a figure in this paper"
         onClick={handleClick}
+        draggable={false}
       />
     </div>
   );
