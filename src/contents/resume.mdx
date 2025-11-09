@@ -1,9 +1,9 @@
-import { RHeader, RSection, RItem } from "../pages/Resume";
+import { RHeader, RSection, RItem } from '../pages/Resume';
 
 <RHeader
   name="Yang Zhan"
   description="Phd student | Human-AI Interaction & eXtended Reality"
-  homepage="./"
+  homepage="/"
   cvUrl={`/CV_YangZhan.pdf`}
 />
 
@@ -54,7 +54,7 @@ import { RHeader, RSection, RItem } from "../pages/Resume";
       title="From Tool to Partner: Exploring the Roles of Embodiment on AI Agent in Pair Programming"
       startTime="2024.12"
       endTime="2025.3"
-      subtitle="VL/HCC 2025"
+      subtitle={<span>VL/HCC 2025 <u>(Best Short Paper Honorable Mention)</u></span>}
       description="Xiaoran Yang, Yang Zhan, Noboru Matsuda, Qiao Jin"
       url=""
   />
@@ -70,7 +70,7 @@ import { RHeader, RSection, RItem } from "../pages/Resume";
     title="Investigating User Experience in Virtual Goods Shopping through a VR Diegetic In-Game Store"
     startTime="2023.4"
     endTime="2023.12"
-    subtitle="AVI 2024 (Best Short Paper Award), IEEE VR (Poster)"
+    subtitle={<span>AVI 2024 <u>(Best Short Paper Award)</u>, IEEE VR (Poster)</span>}
     description="Yiming Sun*, Yang Zhan*, Tatsuo Nakajima"
     url="https://dl.acm.org/doi/10.1145/3656650.3656670"
   />
@@ -100,16 +100,8 @@ import { RHeader, RSection, RItem } from "../pages/Resume";
 </RSection>
 
 <RSection title="Awards">
-  <RItem
-    title="Graduate Merit Award"
-    startTime="2025"
-    subtitle="NC State University"
-  />
-  <RItem
-    title="Azusa Ono Memorial Scholarship"
-    startTime="2023"
-    subtitle="Waseda University"
-  />
+  <RItem title="Graduate Merit Award" startTime="2025" subtitle="NC State University" />
+  <RItem title="Azusa Ono Memorial Scholarship" startTime="2023" subtitle="Waseda University" />
   <RItem
     title="Partial Tuition Waiver Scholarship for Privately Financed International Students"
     startTime="2022"
@@ -120,11 +112,7 @@ import { RHeader, RSection, RItem } from "../pages/Resume";
     startTime="2022"
     subtitle="Waseda University"
   />
-  <RItem
-    title="Outstanding Student Award"
-    startTime="2019"
-    subtitle="Wuhan University"
-  />
+  <RItem title="Outstanding Student Award" startTime="2019" subtitle="Wuhan University" />
   <RItem
     title="The Third Prize of Scholarship in Electronic Information School"
     startTime="2019"

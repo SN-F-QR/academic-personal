@@ -1,6 +1,7 @@
 import { Router, Route } from '@solidjs/router';
 import ContentLayout from './components/ContentLayout';
 import WithNavBarLayout from './components/WithNavBarLayout';
+import Resume from './pages/Resume';
 
 import Academic from './contents/academic.mdx';
 import About from './contents/about.mdx';
@@ -28,6 +29,7 @@ function App() {
           />
           <Route path="*" component={NotFound} />
         </Route>
+        <Route path="/resume" component={Resume} />
       </Router>
     </div>
   );
