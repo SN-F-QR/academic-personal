@@ -1,5 +1,5 @@
 import IconButton from './IconButton';
-import { Show } from 'solid-js';
+import { Show, createSignal } from 'solid-js';
 import { FileText, Link } from 'lucide-solid';
 
 export type PubCardProps = {
@@ -18,11 +18,7 @@ function SinglePubCard(props: PubCardProps) {
     <div class="min-w-full overflow-hidden rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 shadow-md sm:min-h-52">
       <div class="h-full sm:flex">
         <div class="basis-1/3 sm:shrink-0">
-          <img
-            src={props.imagePaths[0]}
-            alt="Publication Image"
-            class="h-full w-full object-cover"
-          />
+          <SingleImage image={props.imagePaths[0]} />
         </div>
         <div class="basis-2/3 px-4 py-4 sm:px-6">
           <CardInfo {...props} />
@@ -60,6 +56,24 @@ function CardInfo(props: PubCardProps) {
           />
         )}
       </div>
+    </div>
+  );
+}
+
+function SingleImage({ image }: { image: string }) {
+  const [isExpanded, setIsExpanded] = createSignal(false);
+  const handleClick = () => {
+    setIsExpanded((prev) => !prev);
+  };
+  return (
+    <div class="h-full bg-gray-100">
+      <img
+        src={image}
+        class={`animated m-0 h-48 w-full cursor-pointer object-contain sm:h-full sm:cursor-default`}
+        classList={{ 'h-96': isExpanded() }}
+        alt="a figure in this paper"
+        onClick={handleClick}
+      />
     </div>
   );
 }
