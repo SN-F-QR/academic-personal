@@ -15,7 +15,7 @@ export type PubCardProps = {
 
 function SinglePubCard(props: PubCardProps) {
   return (
-    <div class="min-w-full overflow-hidden rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 shadow-md sm:min-h-52">
+    <div class="min-w-full overflow-hidden rounded-3xl border border-purple-mid bg-[#f5f4ff]/50 shadow-md">
       <div class="h-full sm:flex">
         <div class="basis-1/3 sm:shrink-0">
           <SingleImage image={props.imagePaths[0]} />

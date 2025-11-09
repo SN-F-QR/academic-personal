@@ -9,7 +9,7 @@ type IconButtonProps = {
 function IconButton(props: IconButtonProps) {
   return (
     <button
-      class="inline-flex cursor-pointer rounded-lg bg-purple-mid px-2 py-1 font-semibold"
+      class="inline-flex cursor-pointer rounded-lg bg-purple-mid px-2 py-1"
       onClick={() => window.open(props.url, '_blank')}
     >
       <props.icon class="mr-1 size-5" />

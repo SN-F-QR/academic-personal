@@ -2,7 +2,8 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans: 'Inter', 'sans-serif';
+  --font-sans: 'Plus Jakarta Sans', 'Inter', 'sans-serif';
+  --font-serif: 'Playfair Display', 'Georgia', 'serif';
   --font-mono: 'JetBrains Mono', 'Menlo', 'monospace';
   --color-gray: #666666;
   --color-purple-strong: #7259ff;
@@ -18,7 +19,7 @@ body {
 
 @layer components {
   .markdown {
-    @apply prose text-gray;
+    @apply prose text-gray-700;
   }
 
   .markdown p {
@@ -30,7 +31,7 @@ body {
   }
 
   .markdown ul {
-    @apply my-0 marker:text-gray;
+    @apply my-0 marker:text-gray-700;
   }
 
   .markdown li {
