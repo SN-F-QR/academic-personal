@@ -8,6 +8,8 @@ import {
   type LucideIcon,
 } from 'lucide-solid';
 import newsData from '../contents/news.json';
+import { A } from '@solidjs/router';
+import { Show } from 'solid-js';
 
 const iconMap: Record<string, LucideIcon> = {
   award: Trophy,
@@ -34,13 +36,32 @@ function NewsWidget() {
   );
 }
 
-export function NewsItem({ title, date, type }: { title: string; date: string; type: string }) {
+export function NewsItem({
+  title,
+  date,
+  type,
+  link,
+}: {
+  title: string;
+  date: string;
+  type: string;
+  link?: string;
+}) {
   const Icon: LucideIcon = iconMap[type] ?? PartyPopper;
+  const Title = <p class="my-0 line-clamp-3 text-gray-700">{title}</p>;
 
   return (
-    <div class="border-gray-light flex w-full grow items-center justify-between">
+    <div class="border-gray-light flex w-full grow items-center justify-between select-none">
       <div class="flex flex-col text-xs">
-        <p class="my-0 line-clamp-3 text-gray">{title}</p>
+        <Show when={link} fallback={Title}>
+          <A
+            href={link ?? ''}
+            target="_blank"
+            class="underline decoration-purple-mid decoration-dashed decoration-2"
+          >
+            {Title}
+          </A>
+        </Show>
         <p class="my-0 font-light text-gray">{date}</p>
       </div>
       <Icon class="size-5 shrink-0 text-purple-strong" />
