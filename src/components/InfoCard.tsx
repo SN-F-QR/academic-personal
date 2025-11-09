@@ -33,21 +33,26 @@ export function ProjectCard(props: ProjectCardProps) {
         />
       </div>
       <div
-        class="animated invisible max-h-0 opacity-0"
-        classList={{ 'max-h-screen opacity-100 visible': isExpanded() }}
+        class="animated grid overflow-hidden opacity-0"
+        classList={{
+          'grid-rows-[1fr] opacity-100': isExpanded(),
+          'grid-rows-[0fr]': !isExpanded(),
+        }}
       >
-        <div class="flex flex-wrap space-x-2 py-1">
-          <Index each={props.tags}>{(tag) => <TagText text={tag()} />}</Index>
-        </div>
-        <h4 class="my-1 font-semibold text-wrap text-gray-800">Abstract</h4>
-        <p class="m-0 text-justify text-sm font-normal whitespace-pre-line">{props.abstract}</p>
-        <Show when={props.link}>
-          <div class="my-1">
-            <a href={props.link} class="text-sm font-semibold text-purple-strong">
-              [Link]
-            </a>
+        <div class="min-h-0">
+          <div class="flex flex-wrap space-x-2 py-1">
+            <Index each={props.tags}>{(tag) => <TagText text={tag()} />}</Index>
           </div>
-        </Show>
+          <h4 class="my-1 font-semibold text-wrap text-gray-800">Abstract</h4>
+          <p class="m-0 text-justify text-sm font-normal whitespace-pre-line">{props.abstract}</p>
+          <Show when={props.link}>
+            <div class="my-1">
+              <a href={props.link} class="text-sm font-semibold text-purple-strong">
+                [Link]
+              </a>
+            </div>
+          </Show>
+        </div>
       </div>
     </div>
   );
