@@ -34,6 +34,12 @@ jobs:
           #                 Exactly 5 colors are expected.
           outputs: |
             public/github-snake.svg
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -47,14 +53,9 @@ jobs:
           zoom: '6'
           output: 'public/generated-map.png'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
       - name: Install and Build
         run: |
-          pnpm install
+          pnpm install --frozen-lockfile
           pnpm build
 
       - name: Upload production
