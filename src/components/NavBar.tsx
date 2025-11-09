@@ -2,6 +2,13 @@ import { A } from '@solidjs/router';
 import { Index } from 'solid-js';
 import LocationWidget from './LocationWidget';
 import NewsWidget from './NewsWidget';
+import { LibraryBig, Satellite, Sticker, type LucideIcon } from 'lucide-solid';
+
+const navButtonGroups = [
+  { name: 'Academic', path: '', Icon: LibraryBig },
+  { name: 'About', path: 'about', Icon: Satellite },
+  { name: 'Links', path: 'links', Icon: Sticker },
+];
 
 function NavBar() {
   return (
@@ -14,13 +21,7 @@ function NavBar() {
       />
       <h1 class="place-self-start font-sans text-3xl font-bold">Yang Zhan</h1>
       <nav class="flex flex-col space-y-1 text-xl font-light text-gray">
-        <NavButtonList
-          links={[
-            { name: 'Academic', path: '' },
-            { name: 'About', path: 'about' },
-            { name: 'Links', path: 'links' },
-          ]}
-        />
+        <NavButtonList links={navButtonGroups} />
       </nav>
       <NewsWidget />
       <LocationWidget />
@@ -40,14 +41,8 @@ export function InlineNavBar() {
           />
           <h1 class="font-sans text-3xl font-bold">Yang Zhan</h1>
         </div>
-        <nav class="flex flex-wrap space-x-2 text-xl font-light text-gray">
-          <NavButtonList
-            links={[
-              { name: 'Academic', path: '' },
-              { name: 'About', path: 'about' },
-              { name: 'Links', path: 'links' },
-            ]}
-          />
+        <nav class="flex flex-wrap space-x-2 text-sm font-light text-gray sm:text-xl">
+          <NavButtonList links={navButtonGroups} />
         </nav>
       </div>
       <span class="flex w-full items-center justify-center space-x-2">
@@ -58,13 +53,15 @@ export function InlineNavBar() {
   );
 }
 
-function NavButtonList({ links }: { links: { name: string; path: string }[] }) {
+function NavButtonList({ links }: { links: { name: string; path: string; Icon?: LucideIcon }[] }) {
   return (
-    <Index each={links}>{(link) => <NavButton name={link().name} path={link().path} />}</Index>
+    <Index each={links}>
+      {(link) => <NavButton name={link().name} path={link().path} Icon={link().Icon} />}
+    </Index>
   );
 }
 
-function NavButton({ name, path }: { name: string; path: string }) {
+function NavButton({ name, path, Icon }: { name: string; path: string; Icon?: LucideIcon }) {
   return (
     <A
       href={`/${path}`}
@@ -73,8 +70,9 @@ function NavButton({ name, path }: { name: string; path: string }) {
       inactiveClass="bg-gray-50 hover:bg-gray-100"
       end={true}
     >
-      <div class="flex h-full justify-center lg:justify-start">
-        <span class="min-w-4 place-self-center px-4">{name}</span>
+      <div class="flex h-full items-center justify-center gap-1 px-4 lg:justify-start">
+        {Icon && <Icon class="size-4 sm:size-5" />}
+        <span class="min-w-4 place-self-center">{name}</span>
       </div>
     </A>
   );
