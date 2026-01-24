@@ -11,8 +11,9 @@ export default [
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: true,
         ecmaFeatures: { jsx: true },
+        project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
       },
     },
     plugins: {
