@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer class="font-sans text-xs font-light text-gray-500">
-      <p>Last updated 2025-11-08</p>
+      <p>Last updated 2026-01-23</p>
       <span class="mt-1 inline-flex">
         <p>&copy; Designed by Yang Zhan. Code available on</p>
         <a href="https://github.com/SN-F-QR/academic-personal">
