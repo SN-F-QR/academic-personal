@@ -6,7 +6,7 @@ import { A } from '@solidjs/router';
 
 function Resume() {
   return (
-    <div class="flex w-auto max-w-2xl flex-col place-self-center py-4">
+    <div class="mx-auto flex w-full max-w-2xl flex-col py-4">
       <div class="markdown flex flex-col">
         <ResumeContent />
       </div>
