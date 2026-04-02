@@ -39,11 +39,13 @@ function CardInfo(props: PubCardProps) {
           <div class="line-clamp-2 whitespace-pre-line">{props.author}</div>
           <div class="shrink-0">{props.conference}</div>
         </div>
-        <div class="place-content-center pb-1 sm:line-clamp-4">{props.description}</div>
+        <div class="place-content-center pb-1 sm:line-clamp-6">{props.description}</div>
       </div>
 
       <div class="flex place-items-center space-x-2">
-        <IconButton icon={FileText} name="PDF" url={props.pdfPath} />
+        <Show when={props.pdfPath != ''}>
+          <IconButton icon={FileText} name="PDF" url={props.pdfPath} />
+        </Show>
         <Show when={props.link != ''}>
           <IconButton icon={Link} name="URL" url={props.link} />
         </Show>
@@ -70,7 +72,7 @@ function SingleImage({ image }: { image: string }) {
     <div class="h-full bg-gray-100">
       <img
         src={image}
-        class={`animated m-0 h-48 w-full cursor-pointer object-contain sm:h-full sm:cursor-default`}
+        class={`animated m-0 h-48 w-full cursor-pointer object-cover sm:h-full sm:cursor-default`}
         classList={{ 'h-96': isExpanded() }}
         alt="a figure in this paper"
         onClick={handleClick}

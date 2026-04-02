@@ -1,5 +1,16 @@
 [
   {
+    "title": "Our short paper was accepted by AIED 2026",
+    "date": "2026.03",
+    "type": "accept"
+  },
+
+  {
+    "title": "One poster was accepted by CHI 2026",
+    "date": "2026.02",
+    "type": "accept"
+  },
+  {
     "title": "Our paper received an honorable mention at VL/HCC 2025",
     "date": "2025.10",
     "type": "award",
@@ -36,7 +47,7 @@
     "type": "cat"
   },
   {
-    "title": "Our paper was accepted as poster by IEEE VR 2024",
+    "title": "Our paper was accepted as a poster by IEEE VR 2024",
     "date": "2024.01",
     "type": "accept"
   },
