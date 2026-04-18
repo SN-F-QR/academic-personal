@@ -1,6 +1,6 @@
 import IconButton from './IconButton';
 import { Show, createSignal } from 'solid-js';
-import { FileText, Link } from 'lucide-solid';
+import { FileText, Link, X } from 'lucide-solid';
 
 export type PubCardProps = {
   title: string;
@@ -72,12 +72,30 @@ function SingleImage(props: { image: string }) {
     <div class="h-full bg-gray-100">
       <img
         src={props.image}
-        class={`animated m-0 h-48 w-full cursor-pointer object-cover sm:h-full sm:cursor-default`}
-        classList={{ 'h-96': isExpanded() }}
+        class={`animated m-0 h-48 w-full cursor-pointer object-cover sm:h-full sm:cursor-pointer`}
         alt="a figure in this paper"
         onClick={handleClick}
         draggable={false}
       />
+
+      <Show when={isExpanded()}>
+        <div
+          class="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+          onClick={handleClick}
+        >
+          <img
+            src={props.image}
+            class="max-h-[90vh] max-w-[90vw] rounded-lg object-contain"
+            alt="a figure in this paper"
+            draggable={false}
+          />
+        </div>
+        <div class="fixed top-0 right-0 z-50">
+          <button class="p-2 text-purple-mid hover:cursor-pointer" onClick={handleClick}>
+            <X class="size-10" />
+          </button>
+        </div>
+      </Show>
     </div>
   );
 }

@@ -37,6 +37,7 @@ export default [
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/consistent-type-imports': 'warn',
       'no-undef': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off',
     },
   },
 ];
