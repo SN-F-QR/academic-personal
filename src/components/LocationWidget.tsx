@@ -21,7 +21,7 @@ function LocationWidget() {
         />
         <div class="absolute bottom-1/12 left-1/12 h-6 w-14">
           <div class="relative flex h-full w-full items-center justify-center">
-            <div class="absolute h-full w-full translate-x-0 rounded-lg bg-white/70"></div>
+            <div class="absolute h-full w-full translate-x-0 rounded-lg bg-white/70" />
             <p class="absolute text-sm text-purple-strong opacity-100">Raleigh</p>
           </div>
         </div>

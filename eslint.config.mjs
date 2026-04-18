@@ -4,6 +4,10 @@ import tsParser from '@typescript-eslint/parser';
 import solid from 'eslint-plugin-solid';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default [
   {
@@ -12,7 +16,7 @@ export default [
       parser: tsParser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
-        project: './tsconfig.json',
+        project: ['./tsconfig.app.json', './tsconfig.node.json'],
         tsconfigRootDir: __dirname,
       },
     },
@@ -32,6 +36,7 @@ export default [
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/consistent-type-imports': 'warn',
+      'no-undef': 'off',
     },
   },
 ];

@@ -49,7 +49,7 @@ function CardInfo(props: PubCardProps) {
         <Show when={props.link != ''}>
           <IconButton icon={Link} name="URL" url={props.link} />
         </Show>
-        <span class="w-full grow"></span>
+        <span class="w-full grow" />
         {props.techIcon && (
           <img
             src={`https://skillicons.dev/icons?i=${props.techIcon}&theme=dark`}
@@ -63,7 +63,7 @@ function CardInfo(props: PubCardProps) {
   );
 }
 
-function SingleImage({ image }: { image: string }) {
+function SingleImage(props: { image: string }) {
   const [isExpanded, setIsExpanded] = createSignal(false);
   const handleClick = () => {
     setIsExpanded((prev) => !prev);
@@ -71,7 +71,7 @@ function SingleImage({ image }: { image: string }) {
   return (
     <div class="h-full bg-gray-100">
       <img
-        src={image}
+        src={props.image}
         class={`animated m-0 h-48 w-full cursor-pointer object-cover sm:h-full sm:cursor-default`}
         classList={{ 'h-96': isExpanded() }}
         alt="a figure in this paper"

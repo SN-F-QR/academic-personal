@@ -53,26 +53,26 @@ export function InlineNavBar() {
   );
 }
 
-function NavButtonList({ links }: { links: { name: string; path: string; Icon?: LucideIcon }[] }) {
+function NavButtonList(props: { links: { name: string; path: string; Icon?: LucideIcon }[] }) {
   return (
-    <Index each={links}>
+    <Index each={props.links}>
       {(link) => <NavButton name={link().name} path={link().path} Icon={link().Icon} />}
     </Index>
   );
 }
 
-function NavButton({ name, path, Icon }: { name: string; path: string; Icon?: LucideIcon }) {
+function NavButton(props: { name: string; path: string; Icon?: LucideIcon }) {
   return (
     <A
-      href={`/${path}`}
+      href={`/${props.path}`}
       class="animated mt-1 h-10 flex-1 cursor-pointer rounded-xl lg:max-w-54 lg:flex-auto"
       activeClass="bg-purple-mid text-purple-strong shadow-sm"
       inactiveClass="bg-gray-50 hover:bg-gray-100"
       end={true}
     >
       <div class="flex h-full items-center justify-center gap-1 px-4 lg:justify-start">
-        {Icon && <Icon class="size-4 sm:size-5" />}
-        <span class="min-w-4 place-self-center">{name}</span>
+        {props.Icon && <props.Icon class="size-4 sm:size-5" />}
+        <span class="min-w-4 place-self-center">{props.name}</span>
       </div>
     </A>
   );

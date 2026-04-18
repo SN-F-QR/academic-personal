@@ -36,26 +36,15 @@ function NewsWidget() {
   );
 }
 
-export function NewsItem({
-  title,
-  date,
-  type,
-  link,
-}: {
-  title: string;
-  date: string;
-  type: string;
-  link?: string;
-}) {
-  const Icon: LucideIcon = iconMap[type] ?? PartyPopper;
-  const Title = <p class="my-0 line-clamp-3 text-gray-700">{title}</p>;
+export function NewsItem(props: { title: string; date: string; type: string; link?: string }) {
+  const Title = <p class="my-0 line-clamp-3 text-gray-700">{props.title}</p>;
 
   return (
     <div class="border-gray-light flex w-full grow items-center justify-between select-none">
       <div class="flex flex-col text-xs">
-        <Show when={link} fallback={Title}>
+        <Show when={props.link} fallback={Title}>
           <A
-            href={link ?? ''}
+            href={props.link ?? ''}
             target="_blank"
             rel="noopener noreferrer"
             class="underline decoration-purple-mid decoration-dashed decoration-2"
@@ -63,9 +52,12 @@ export function NewsItem({
             {Title}
           </A>
         </Show>
-        <p class="my-0 font-light text-gray">{date}</p>
+        <p class="my-0 font-light text-gray">{props.date}</p>
       </div>
-      <Icon class="size-5 shrink-0 text-purple-strong" />
+      {(() => {
+        const Icon: LucideIcon = iconMap[props.type] ?? PartyPopper;
+        return <Icon class="size-5 shrink-0 text-purple-strong" />;
+      })()}
     </div>
   );
 }

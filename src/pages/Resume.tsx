@@ -17,12 +17,7 @@ function Resume() {
   );
 }
 
-export function RHeader({
-  name,
-  description,
-  homepage,
-  cvUrl,
-}: {
+export function RHeader(props: {
   name: string;
   description: string;
   homepage?: string;
@@ -30,16 +25,16 @@ export function RHeader({
 }) {
   return (
     <header>
-      <A href={homepage ?? ''}>
+      <A href={props.homepage ?? ''}>
         <h2>
-          {name}
+          {props.name}
           <ArrowUpRight class="ml-1 inline size-4 align-text-top" />
         </h2>
       </A>
-      <p class="m-0 text-sm">{description}</p>
-      <Show when={cvUrl}>
-        {cvUrl && (
-          <A class="mt-1 flex items-center" href={cvUrl} download="CV_YangZhan.pdf">
+      <p class="m-0 text-sm">{props.description}</p>
+      <Show when={props.cvUrl}>
+        {props.cvUrl && (
+          <A class="mt-1 flex items-center" href={props.cvUrl} download="CV_YangZhan.pdf">
             <BookDown class="mr-1 inline size-4 align-text-top" />
             <p class="m-0 text-sm">Download</p>
           </A>
@@ -58,14 +53,7 @@ export function RSection(props: ParentProps<{ title: string }>) {
   );
 }
 
-export function RItem({
-  title,
-  startTime,
-  endTime,
-  subtitle,
-  description,
-  url,
-}: {
+export function RItem(props: {
   title: string;
   startTime: string;
   endTime?: string;
@@ -75,22 +63,22 @@ export function RItem({
 }) {
   return (
     <div class="flex w-full flex-col text-sm md:flex-row">
-      <div class="mr-14 mb-1 w-full max-w-32 font-mono font-light text-gray-700">{`${startTime}${endTime ? `-${endTime}` : ''}`}</div>
+      <div class="mr-14 mb-1 w-full max-w-32 font-mono font-light text-gray-700">{`${props.startTime}${props.endTime ? `-${props.endTime}` : ''}`}</div>
 
       <div class="flex flex-1 flex-col space-y-1">
         <div class="text-black">
-          <Show when={url} fallback={title}>
-            <A class="cursor-pointer text-black" href={url!}>
-              {title}
+          <Show when={props.url} fallback={props.title}>
+            <A class="cursor-pointer text-black" href={props.url!}>
+              {props.title}
               <ArrowUpRight class="ml-1 inline size-3 align-text-top" />
             </A>
           </Show>
         </div>
-        <Show when={subtitle}>
-          <div class="font-light text-gray-700">{subtitle}</div>
+        <Show when={props.subtitle}>
+          <div class="font-light text-gray-700">{props.subtitle}</div>
         </Show>
-        <Show when={description}>
-          <div class="my-2 mt-0 text-sm font-light text-gray-700">{description}</div>
+        <Show when={props.description}>
+          <div class="my-2 mt-0 text-sm font-light text-gray-700">{props.description}</div>
         </Show>
       </div>
     </div>

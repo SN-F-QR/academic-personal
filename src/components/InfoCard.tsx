@@ -70,6 +70,6 @@ export function InfoCard(props: InfoCardProps) {
   );
 }
 
-function TagText({ text }: { text: string }) {
-  return <span class="text-purple-strong">{`# ${text}`}</span>;
+function TagText(props: { text: string }) {
+  return <span class="text-purple-strong">{`# ${props.text}`}</span>;
 }
