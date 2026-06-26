@@ -8,7 +8,11 @@ export const imagePaths = new Map<string, string[]>();
 
 export const loadImagePaths = () => {
   for (const path in imageList) {
-    const fileName = path.split('/').pop()?.split('_')[0] as string;
+    const fileName = path
+      .split('/')
+      .pop()
+      ?.replace(/\.[^.]+$/, '')
+      .split('_')[0] as string;
     const staticPath = imageList[path] as string;
     if (imagePaths.has(fileName)) {
       imagePaths.set(fileName, [...imagePaths.get(fileName)!, staticPath]);
