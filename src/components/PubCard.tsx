@@ -1,6 +1,6 @@
 import IconButton from './IconButton';
 import { Show, createSignal } from 'solid-js';
-import { FileText, Link, X } from 'lucide-solid';
+import { FileText, Globe, Link, X } from 'lucide-solid';
 
 export type PubCardProps = {
   title: string;
@@ -10,6 +10,8 @@ export type PubCardProps = {
   imagePaths: string[];
   link: string;
   pdfPath: string;
+  projectUrl?: string;
+  imageFit?: 'cover' | 'contain';
   techIcon?: string;
 };
 
@@ -18,7 +20,7 @@ function SinglePubCard(props: PubCardProps) {
     <div class="min-w-full overflow-hidden rounded-3xl bg-[#f5f4ff]/50 shadow-sm">
       <div class="h-full sm:flex">
         <div class="basis-1/3 sm:shrink-0">
-          <SingleImage image={props.imagePaths[0]} />
+          <SingleImage image={props.imagePaths[0]} fit={props.imageFit} />
         </div>
         <div class="basis-2/3 px-4 py-4 sm:px-6">
           <CardInfo {...props} />
@@ -49,6 +51,9 @@ function CardInfo(props: PubCardProps) {
         <Show when={props.link != ''}>
           <IconButton icon={Link} name="URL" url={props.link} />
         </Show>
+        <Show when={!!props.projectUrl}>
+          <IconButton icon={Globe} name="Project" url={props.projectUrl!} />
+        </Show>
         <span class="w-full grow" />
         {props.techIcon && (
           <img
@@ -63,16 +68,27 @@ function CardInfo(props: PubCardProps) {
   );
 }
 
-function SingleImage(props: { image: string }) {
+function SingleImage(props: { image: string; fit?: 'cover' | 'contain' }) {
   const [isExpanded, setIsExpanded] = createSignal(false);
   const handleClick = () => {
     setIsExpanded((prev) => !prev);
   };
+  const contain = () => props.fit === 'contain';
   return (
-    <div class="h-full bg-gray-100">
+    <div
+      class={
+        contain()
+          ? 'flex h-48 w-full items-center justify-center bg-white p-2 sm:h-full'
+          : 'h-full bg-gray-100'
+      }
+    >
       <img
         src={props.image}
-        class={`animated m-0 h-48 w-full cursor-pointer object-cover sm:h-full sm:cursor-pointer`}
+        class={
+          contain()
+            ? 'animated m-0 max-h-full max-w-full cursor-pointer object-contain sm:cursor-pointer'
+            : 'animated m-0 h-48 w-full cursor-pointer object-cover sm:h-full sm:cursor-pointer'
+        }
         alt="a figure in this paper"
         onClick={handleClick}
         draggable={false}
