@@ -1,6 +1,6 @@
 import IconButton from './IconButton';
 import { Show, createSignal } from 'solid-js';
-import { FileText, Link, X } from 'lucide-solid';
+import { FileText, Globe, Link, X } from 'lucide-solid';
 
 export type PubCardProps = {
   title: string;
@@ -10,6 +10,7 @@ export type PubCardProps = {
   imagePaths: string[];
   link: string;
   pdfPath: string;
+  projectUrl?: string;
   techIcon?: string;
 };
 
@@ -48,6 +49,9 @@ function CardInfo(props: PubCardProps) {
         </Show>
         <Show when={props.link != ''}>
           <IconButton icon={Link} name="URL" url={props.link} />
+        </Show>
+        <Show when={!!props.projectUrl}>
+          <IconButton icon={Globe} name="Project" url={props.projectUrl!} />
         </Show>
         <span class="w-full grow" />
         {props.techIcon && (
